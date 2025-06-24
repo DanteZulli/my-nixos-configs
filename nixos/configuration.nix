@@ -44,8 +44,15 @@
     LC_TIME = "es_AR.UTF-8";
   };
 
+  # Sway WM & Ly DM
+  programs.sway = {
+    enable = true;
+  };
+  services.displayManager.ly.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+
   # GNOME Desktop Environment
-  services.xserver.displayManager.gdm.enable = true;
+  /* services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = with pkgs; [
     baobab
@@ -73,7 +80,7 @@
     gnome-connections
     gnome-text-editor
     gnome-tour  
-  ];
+  ];*/
 
   # Keymap in X11
   services.xserver.xkb = {
@@ -105,6 +112,17 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Sway Related
+    grim
+    slurp
+    wl-clipboard
+    mako
+    
+    # Password & Keys Managment
+    seahorse
+
+    # Terminal Emulators
+    foot
   ];
 
   # This value determines the NixOS release from which the default

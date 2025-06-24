@@ -51,6 +51,14 @@
     };
   };
 
+  wayland.windowManager.sway = {
+    enable = true;
+    config = rec {
+      modifier = "Mod4";
+      terminal = "foot";
+    };
+  };
+
   # Home Manager
   programs.home-manager.enable = true;
 
