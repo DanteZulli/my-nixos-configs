@@ -20,6 +20,7 @@
       devices = [ "nodev" ];
       efiSupport = true;
       useOSProber = true;
+      theme = "${pkgs.libsForQt5.breeze-grub}/grub/themes/breeze";
       configurationLimit = 20;
     };
     timeout = null;
