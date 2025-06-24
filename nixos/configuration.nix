@@ -44,12 +44,13 @@
     LC_TIME = "es_AR.UTF-8";
   };
 
-  # Sway WM & Ly DM
+  # Sway WM, Ly DM & Deps.
   programs.sway = {
     enable = true;
   };
   services.displayManager.ly.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  security.polkit.enable = true;
 
   # GNOME Desktop Environment
   /* services.xserver.displayManager.gdm.enable = true;
@@ -105,7 +106,7 @@
   users.users.dante = {
     isNormalUser = true;
     description = "Dante Zulli";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [
     ];
   };
@@ -123,6 +124,9 @@
 
     # Terminal Emulators
     foot
+
+    # System Libraries
+    libnotify
   ];
 
   # This value determines the NixOS release from which the default
