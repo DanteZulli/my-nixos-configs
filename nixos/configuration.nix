@@ -20,7 +20,9 @@
       devices = [ "nodev" ];
       efiSupport = true;
       useOSProber = true;
+      configurationLimit = 20;
     };
+    timeout = null;
   };
 
   # Networking
