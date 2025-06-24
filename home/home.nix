@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = [
+    ./sway.nix
+  ];
+
   home = {
     username =  "dante";
     homeDirectory = "/home/dante";
@@ -48,15 +53,6 @@
       "privacy.clearOnShutdown.history" = false;
       "privacy.clearOnShutdown.cookies" = false;
       "network.cookie.lifetimePolicy" = 0;
-    };
-  };
-
-  # Sway WM
-  wayland.windowManager.sway = {
-    enable = true;
-    config = rec {
-      modifier = "Mod4";
-      terminal = "foot";
     };
   };
 
