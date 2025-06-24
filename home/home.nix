@@ -13,6 +13,9 @@
   };
 
   home.packages = with pkgs; [
+    # Communication
+    ferdium
+
     # Programming
     code-cursor
     temurin-bin
