@@ -15,6 +15,7 @@
   home.packages = with pkgs; [
     # Programming
     code-cursor
+    temurin-bin
 
     # Misc
     fastfetch
