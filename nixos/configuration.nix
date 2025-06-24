@@ -75,7 +75,6 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
   ];
 
   # This value determines the NixOS release from which the default

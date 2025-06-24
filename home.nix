@@ -1,13 +1,19 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "dante";
-  home.homeDirectory = "/home/dante";
+  home = {
+    username =  "dante";
+    homeDirectory = "/home/dante";
+  };
 
   home.packages = with pkgs; [
+    # Misc
+    fastfetch
     fortune
+
+    # Utilities
     btop
-    lm_sensors # for `sensors` command
+    lm_sensors
   ];
 
   # Git
@@ -30,6 +36,18 @@
     '';
     shellAliases = {
       nswitch= "sudo nixos-rebuild switch --flake ~/.my-nixos-configs#lachata";
+    };
+  };
+
+  # LibreWolf
+  programs.librewolf = {
+    enable = true;
+    settings = {
+      "webgl.disabled" = false;
+      "privacy.resistFingerprinting" = false;
+      "privacy.clearOnShutdown.history" = false;
+      "privacy.clearOnShutdown.cookies" = false;
+      "network.cookie.lifetimePolicy" = 0;
     };
   };
 
