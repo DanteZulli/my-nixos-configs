@@ -82,9 +82,7 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [    
-    foot
     libnotify
-    seahorse
   ];
 
   # This value determines the NixOS release from which the default

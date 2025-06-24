@@ -4,6 +4,8 @@
   ...
 }: let
   mod = "Mod4";
+
+# sway.nix - Wayland Session with Sway WM and related software Settings.
 in {
 
   wayland.windowManager.sway = {
@@ -11,7 +13,7 @@ in {
     checkConfig = true;
     config = rec {
       modifier = mod;
-      terminal = "foot";
+      terminal = "alacritty";
       bars = [];
       floating.titlebar = false;
       window.titlebar = false;
