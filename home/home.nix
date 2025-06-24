@@ -13,6 +13,9 @@
   };
 
   home.packages = with pkgs; [
+    # Programming
+    code-cursor
+
     # Misc
     fastfetch
     fortune
