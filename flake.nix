@@ -1,5 +1,5 @@
 {
-  description = "My NixOS Flake";
+  description = "Dante's NixOS Flake";
 
   inputs = {
     # NixOS official package source
@@ -12,33 +12,32 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-  in {
-    # NixOS configuration entrypoint
-    # Available through 'sudo nixos-rebuild switch --flake .#hostname'
-    nixosConfigurations = {
-      "lachata" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-	system = "x86_64-linux";
-        modules = [
-	  ./nixos/configuration.nix
-	  
-	  # Home Manager (As a module of NixOs)
-	  # so that home-manager configuration will be deployed automatically
-	  home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users."dante" = import ./home/home.nix;
-          }
-	];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    {
+      # NixOS configuration entrypoint
+      # Available through 'sudo nixos-rebuild switch --flake .#hostname'
+      nixosConfigurations = {
+        "lachata" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./nixos/configuration.nix
+
+            # Home Manager (As a module of NixOs)
+            # so that home-manager configuration will be deployed automatically
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users."dante" = import ./home/home.nix;
+            }
+          ];
+        };
       };
     };
-  };
 }
