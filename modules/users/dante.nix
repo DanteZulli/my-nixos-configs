@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   users.users.dante = {
@@ -10,6 +10,5 @@
       "video"
       "input"
     ];
-    packages = with pkgs; [];
   };
 }
