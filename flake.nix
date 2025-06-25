@@ -26,7 +26,7 @@
         "lachata" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            ./nixos/configuration.nix
+            ./hosts/lachata
 
             # Home Manager (As a module of NixOs)
             # so that home-manager configuration will be deployed automatically
