@@ -82,6 +82,7 @@
 
   # $ nix search wget
   environment.systemPackages = with pkgs; [    
+    nixfmt-rfc-style
     libnotify
   ];
 
