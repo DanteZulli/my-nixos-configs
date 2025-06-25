@@ -1,11 +1,10 @@
+# sway.nix - Wayland Session with Sway WM and related software Settings.
 {
   pkgs,
   lib,
   ...
 }: let
   mod = "Mod4";
-
-# sway.nix - Wayland Session with Sway WM and related software Settings.
 in {
 
   wayland.windowManager.sway = {
@@ -14,17 +13,10 @@ in {
     config = rec {
       modifier = mod;
       terminal = "alacritty";
-      bars = [];
       floating.titlebar = false;
       window.titlebar = false;
     };
     wrapperFeatures.gtk = true;
-  };
-
-  programs.waybar = {
-    enable = true;
-    systemd.enable = true;
-    #style = pkgs.lib.readFile ./waybar.css;
   };
 
   home.sessionVariables = {
@@ -57,9 +49,9 @@ in {
 
   home.packages = with pkgs; [
     grim
+    mako
     slurp
     wl-clipboard
-    mako # notifications
   ];
 
   xdg = {
