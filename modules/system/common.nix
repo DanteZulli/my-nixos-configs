@@ -23,11 +23,21 @@
     "flakes"
   ];
   nixpkgs.config.allowUnfree = true;
+  nix.gc = {
+    automatic = true;
+    dates = [ "weekly" ];
+    options = "--delete-older-than 7d";
+  };
 
   # System packages
   environment.systemPackages = with pkgs; [
+    wget
     nixfmt-rfc-style
     libnotify
+    lm_sensors
+    fastfetch
+    fortune
+    nnn
   ];
 
   # Time and internationalization
