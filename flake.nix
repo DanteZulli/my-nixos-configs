@@ -18,7 +18,7 @@
       ...
     }@inputs:
     let
-      # Function to create a NixOS system configuration
+      # Function to create a NixOS system configuration for a given host
       mkSystem =
         host:
         nixpkgs.lib.nixosSystem {
