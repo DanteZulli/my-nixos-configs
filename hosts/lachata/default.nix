@@ -29,11 +29,7 @@ in
     ../../modules/system/bootloader.nix
     ../../modules/system/networking.nix
     ../../modules/system/time-i18n.nix
-    ../../modules/security/polkit.nix
-    ../../modules/desktop/keyring.nix
-    ../../modules/desktop/sway.nix
-    ../../modules/desktop/sound.nix
-    ../../modules/desktop/display/ly.nix
+    ../../modules/desktop/gnome
     ../../modules/users/dante.nix
   ];
 
