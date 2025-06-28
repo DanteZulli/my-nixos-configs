@@ -1,10 +1,27 @@
 {
-  pkgs,
   ...
 }:
 
 {
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.gnome.core-utilities.enable = false;
+  services = {
+
+    xserver = {
+      enable = false;
+
+      displayManager = {
+        gdm = {
+          enable = true;
+        };
+      };
+
+      desktopManager = {
+        gnome = {
+          enable = true;
+        };
+      };
+
+    };
+
+    gnome.core-apps.enable = false;
+  };
 }
