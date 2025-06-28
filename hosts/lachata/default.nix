@@ -7,7 +7,7 @@
     ./hardware-configuration.nix
     ../../modules/system/common.nix
     ../../modules/desktop/gnome.nix
-    ../../modules/desktop/xmonad.nix
+    #../../modules/desktop/i3.nix
     ../../modules/users/dante.nix
   ];
 
