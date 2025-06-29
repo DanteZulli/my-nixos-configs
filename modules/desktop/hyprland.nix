@@ -18,6 +18,8 @@
     wl-clipboard
     rofi-wayland
     swww
+    grim
+    slurp
   ];
 
   xdg.portal = {
