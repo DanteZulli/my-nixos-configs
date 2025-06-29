@@ -8,10 +8,9 @@
     ferdium
     code-cursor
     temurin-bin
+    (discord.override {
+      withOpenASAR = true;
+    })
   ];
-
-  programs = {
-    btop.enable = true; 
-  };
 
 }
