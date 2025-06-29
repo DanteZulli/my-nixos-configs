@@ -6,8 +6,8 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/system/common
-    ../../modules/desktop/gnome.nix
     ../../modules/users/dante.nix
+    ../../modules/desktop/hyprland.nix
   ];
 
   networking.hostName = "lachata";
