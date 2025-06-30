@@ -24,6 +24,8 @@
 
   security.polkit.enable = true;
 
+  programs.dconf.enable = true;
+
   xdg.portal = {
     enable = true;
     extraPortals = [
