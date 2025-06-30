@@ -6,7 +6,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/system/common
-    ../../modules/system/graphics/opengl.nix
     ../../modules/system/graphics/amd.nix
     ../../modules/users/dante.nix
     ../../modules/desktop/hyprland.nix

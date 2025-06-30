@@ -9,5 +9,6 @@
     ./locale.nix
     ./audio.nix
     ./memory.nix
+    ./graphics.nix
   ];
 }
