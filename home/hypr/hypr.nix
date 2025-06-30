@@ -131,6 +131,20 @@
       # Keybindings
       "$mainMod" = "SUPER";
 
+      # Workspaces
+      workspace = [
+        "1, monitor:DP-1, default:true"
+        "2, monitor:DP-1"
+        "3, monitor:DP-1"
+        "4, monitor:DP-1"
+        "5, monitor:DP-1"
+        "6, monitor:DP-1"
+        "7, monitor:DP-1"
+        "8, monitor:DP-1"
+        "9, monitor:DP-2, default:true"
+        "10, monitor:DP-2"
+      ];
+
       # Bindings
       bind = [
         # Terminal
@@ -177,7 +191,7 @@
         # Fullscreen
         "$mainMod, F, fullscreen"
         # Resize mode
-        "$mainMod, R, resizeactive" 
+        "$mainMod, R, resizeactive"
         # Screenshot
         ", Print, exec, grim -l 0 -g \"$(slurp)\" - | wl-copy"
       ];
