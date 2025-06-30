@@ -6,7 +6,7 @@
     ./core.nix
     ./programs
     ./shell
-    ./hypr/hypr.nix
+    ./hypr
   ];
 
 }
