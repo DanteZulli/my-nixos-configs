@@ -134,6 +134,21 @@
       "$up" = "k";
       "$right" = "l";
 
+      # Workspaces
+      workspace = [
+        "1,monitor:DP-1"
+        "2,monitor:DP-1"
+        "3,monitor:DP-1"
+        "4,monitor:DP-1"
+        "5,monitor:DP-1"
+        "6,monitor:DP-1"
+        "7,monitor:DP-1"
+        "8,monitor:DP-1"
+        "9,monitor:DP-2"
+        "10,monitor:DP-2"
+      ];
+
+      # Bindings
       bind = [
         # Terminal
         "$mainMod, Return, exec, $terminal"
@@ -164,27 +179,28 @@
         "$mainMod SHIFT, up, movewindow, u"
         "$mainMod SHIFT, right, movewindow, r"
         # Workspaces
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
-        "$mainMod, 6, workspace, 6"
-        "$mainMod, 7, workspace, 7"
-        "$mainMod, 8, workspace, 8"
-        "$mainMod, 9, workspace, 9"
-        "$mainMod, 0, workspace, 10"
+        "$mainMod, 1, exec, hyprsome 1"
+        "$mainMod, 2, exec, hyprsome 2"
+        "$mainMod, 3, exec, hyprsome 3"
+        "$mainMod, 4, exec, hyprsome 4"
+        "$mainMod, 5, exec, hyprsome 5"
+        "$mainMod, 6, exec, hyprsome 6"
+        "$mainMod, 7, exec, hyprsome 7"
+        "$mainMod, 8, exec, hyprsome 8"
+        "$mainMod, 9, exec, hyprsome 9"
+        "$mainMod, 0, exec, hyprsome 10"
         # Move to workspace
-        "$mainMod SHIFT, 1, movetoworkspace, 1"
-        "$mainMod SHIFT, 2, movetoworkspace, 2"
-        "$mainMod SHIFT, 3, movetoworkspace, 3"
-        "$mainMod SHIFT, 4, movetoworkspace, 4"
-        "$mainMod SHIFT, 5, movetoworkspace, 5"
-        "$mainMod SHIFT, 6, movetoworkspace, 6"
-        "$mainMod SHIFT, 7, movetoworkspace, 7"
-        "$mainMod SHIFT, 8, movetoworkspace, 8"
-        "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, 0, movetoworkspace, 10"
+        "$mainMod SHIFT, 1, exec, hyprsome move 1"
+        "$mainMod SHIFT, 2, exec, hyprsome move 2"
+        "$mainMod SHIFT, 3, exec, hyprsome move 3"
+        "$mainMod SHIFT, 4, exec, hyprsome move 4"
+        "$mainMod SHIFT, 5, exec, hyprsome move 5"
+        "$mainMod SHIFT, 6, exec, hyprsome move 6"
+        "$mainMod SHIFT, 7, exec, hyprsome move 7"
+        "$mainMod SHIFT, 8, exec, hyprsome move 8"
+        "$mainMod SHIFT, 9, exec, hyprsome move 9"
+        "$mainMod SHIFT, 0, exec, hyprsome move 10"
+        
         # Fullscreen
         "$mainMod, F, fullscreen"
         # Floating toggle
