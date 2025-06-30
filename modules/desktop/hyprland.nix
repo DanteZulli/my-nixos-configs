@@ -22,6 +22,8 @@
     slurp
   ];
 
+  security.polkit.enable = true;
+
   xdg.portal = {
     enable = true;
     extraPortals = [
