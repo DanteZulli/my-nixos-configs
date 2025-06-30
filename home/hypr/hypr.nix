@@ -6,10 +6,15 @@
     xwayland.enable = true;
     settings = {
       # Monitors
-      monitor = ",preferred,auto,auto";
+      # TODO: Add validation for different hosts
+      monitor = [
+        "DP-1,1920x1080@60,1920x0,1"
+        "DP-2,1920x1080@60,0x0,1, transform, 1"
+      ];
 
       # Programs
       "$terminal" = "alacritty";
+      "$menu" = "rofi -show drun -show-icons";
       "$fileManager" = "dolphin";
 
       # Autostart
@@ -27,7 +32,7 @@
       # General
       general = {
         gaps_in = 5;
-        gaps_out = 20;
+        gaps_out = 10;
         border_size = 2;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
@@ -38,7 +43,7 @@
 
       # Decoration
       decoration = {
-        rounding = 10;
+        rounding = 8;
         rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
@@ -112,6 +117,7 @@
         kb_rules = "";
         follow_mouse = 1;
         sensitivity = 0;
+        accel_profile = "flat";
         touchpad = {
           natural_scroll = false;
         };
@@ -122,36 +128,42 @@
         workspace_swipe = false;
       };
 
-      # Device
-      device = [
-        {
-          name = "epic-mouse-v1";
-          sensitivity = -0.5;
-        }
-      ];
-
       # Keybindings
       "$mainMod" = "SUPER";
+      "$left" = "h";
+      "$down" = "j";
+      "$up" = "k";
+      "$right" = "l";
 
       bind = [
-        # Rofi
-        "$mainMod, D, exec, rofi -show drun -show-icons"
-        # Screenshot
-        ", Print, exec, grim -l 0 -g \"$(slurp)\" - | wl-copy"
-        # Basic controls
-        "$mainMod, Q, exec, $terminal"
-        "$mainMod, C, killactive"
-        "$mainMod, M, exit"
-        "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloating"
-        "$mainMod, R, exec, $menu"
-        "$mainMod, P, pseudo"
-        "$mainMod, J, togglesplit"
-        # Move focus
+        # Terminal
+        "$mainMod, Return, exec, $terminal"
+        # Kill window
+        "$mainMod SHIFT, Q, killactive"
+        # Launcher
+        "$mainMod, D, exec, $menu"
+        # Exit session
+        "$mainMod SHIFT, E, exit"
+        # Focus movement (vim keys)
+        "$mainMod, $left, movefocus, l"
+        "$mainMod, $down, movefocus, d"
+        "$mainMod, $up, movefocus, u"
+        "$mainMod, $right, movefocus, r"
+        # Focus movement (arrow keys)
         "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, right, movefocus, r"
+        # Move window (vim keys)
+        "$mainMod SHIFT, $left, movewindow, l"
+        "$mainMod SHIFT, $down, movewindow, d"
+        "$mainMod SHIFT, $up, movewindow, u"
+        "$mainMod SHIFT, $right, movewindow, r"
+        # Move window (arrow keys)
+        "$mainMod SHIFT, left, movewindow, l"
+        "$mainMod SHIFT, down, movewindow, d"
+        "$mainMod SHIFT, up, movewindow, u"
+        "$mainMod SHIFT, right, movewindow, r"
         # Workspaces
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -174,12 +186,17 @@
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
-        # Special workspace
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
-        # Mouse workspace switching
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
+        # Fullscreen
+        "$mainMod, F, fullscreen"
+        # Floating toggle
+        "$mainMod SHIFT, SPACE, togglefloating"
+        # Resize mode
+        "$mainMod, R, resizeactive"
+        # Scratchpad (Hyprland: special workspace)
+        "$mainMod SHIFT, MINUS, movetoworkspace, special"
+        "$mainMod, MINUS, togglespecialworkspace"
+        # Screenshot
+        ", Print, exec, grim -l 0 -g \"$(slurp)\" - | wl-copy"
       ];
 
       # Mouse bindings
