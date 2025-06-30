@@ -10,5 +10,6 @@
     ./audio.nix
     ./memory.nix
     ./graphics.nix
+    ./fonts.nix
   ];
 }
