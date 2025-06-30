@@ -16,7 +16,6 @@
     libnotify
     wl-clipboard
     rofi-wayland
-    hyprsome
     swww
     grim
     slurp
