@@ -13,7 +13,10 @@
       "$fileManager" = "dolphin";
 
       # Autostart
-      "exec-once" = "dunst";
+      "exec-once" = [
+        "waybar &"
+        "dunst &"
+      ];
 
       # Environment variables
       env = [
