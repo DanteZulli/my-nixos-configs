@@ -19,7 +19,6 @@
 
       # Autostart
       "exec-once" = [
-        "waybar &"
         "dunst &"
       ];
 

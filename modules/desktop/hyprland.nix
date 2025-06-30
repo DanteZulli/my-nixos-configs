@@ -12,7 +12,6 @@
 
   environment.systemPackages = with pkgs; [
     kitty
-    waybar
     mako
     libnotify
     wl-clipboard
