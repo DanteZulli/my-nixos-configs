@@ -8,8 +8,7 @@
         layer = "top";
         position = "top";
         height = 30;
-        modules-left = [ "hypr/workspaces" ];
-        modules-center = [ "clock" ];
+        modules-left = [ "hyprland/workspaces" ];
         modules-right = [
           "pulseaudio"
           "network"
