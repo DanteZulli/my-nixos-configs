@@ -1,9 +1,9 @@
-{ ... }:
+{ hostname, ... }:
 
 {
   imports = [
-    ./hypr.nix
+    (import ./hypr.nix { inherit hostname; })
     ./wlsunset.nix
-    ./waybar.nix
+    (import ./waybar.nix { inherit hostname; })
   ];
 }

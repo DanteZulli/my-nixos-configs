@@ -1,4 +1,7 @@
-{ ... }:
+{
+  hostname,
+  ...
+}:
 
 {
   programs.waybar = {

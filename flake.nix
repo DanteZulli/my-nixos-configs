@@ -30,7 +30,9 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.dante = import ./home/home.nix;
+                users.dante = import ./home/home.nix {
+                  hostname = host;
+                };
               };
             }
           ];

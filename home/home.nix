@@ -1,4 +1,4 @@
-{ ... }:
+{ hostname, ... }:
 
 {
 
@@ -6,7 +6,7 @@
     ./core.nix
     ./programs
     ./shell
-    ./hypr
+    (import ./hypr { inherit hostname; })
   ];
 
 }

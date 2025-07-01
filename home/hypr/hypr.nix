@@ -1,16 +1,22 @@
-{ config, pkgs, ... }:
+{ hostname, ... }:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     settings = {
+
       # Monitors
-      # TODO: Add validation for different hosts
-      monitor = [
-        "DP-1,1920x1080@60,1920x0,1"
-        "DP-2,1920x1080@60,0x0,1, transform, 1"
-      ];
+      monitor =
+        if hostname == "lachata" then
+          [
+            "DP-1,1920x1080@60,1920x0,1"
+            "DP-2,1920x1080@60,0x0,1, transform, 1"
+          ]
+        else
+          [
+            "preferred,auto,auto"
+          ];
 
       # Programs
       "$terminal" = "alacritty";
@@ -131,19 +137,23 @@
       # Keybindings
       "$mainMod" = "SUPER";
 
-      # Workspaces
-      workspace = [
-        "1, monitor:DP-1, default:true"
-        "2, monitor:DP-1"
-        "3, monitor:DP-1"
-        "4, monitor:DP-1"
-        "5, monitor:DP-1"
-        "6, monitor:DP-1"
-        "7, monitor:DP-1"
-        "8, monitor:DP-1"
-        "9, monitor:DP-2, default:true"
-        "10, monitor:DP-2"
-      ];
+      # Workspaces - only defined for lachata
+      workspace =
+        if hostname == "lachata" then
+          [
+            "1, monitor:DP-1, default:true"
+            "2, monitor:DP-1"
+            "3, monitor:DP-1"
+            "4, monitor:DP-1"
+            "5, monitor:DP-1"
+            "6, monitor:DP-1"
+            "7, monitor:DP-1"
+            "8, monitor:DP-1"
+            "9, monitor:DP-2, default:true"
+            "10, monitor:DP-2"
+          ]
+        else
+          null;
 
       # Bindings
       bind = [
