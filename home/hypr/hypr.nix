@@ -50,8 +50,8 @@
 
       # Decoration
       decoration = {
-        rounding = 0;
-        rounding_power = 0;
+        rounding = 6;
+        rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
         shadow = {
