@@ -12,5 +12,6 @@
     ./graphics.nix
     ./fonts.nix
     ./bluetooth.nix
+    ./docker.nix
   ];
 }
