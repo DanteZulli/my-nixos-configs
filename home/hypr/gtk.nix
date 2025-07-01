@@ -4,15 +4,15 @@
   gtk = {
     enable = true;
     cursorTheme = {
-      name = "Rose Pine";
+      name = "rose-pine-cursor";
       package = pkgs.rose-pine-cursor;
     };
     theme = {
-      name = "Rose Pine";
+      name = "rose-pine-gtk";
       package = pkgs.rose-pine-gtk-theme;
     };
     iconTheme = {
-      name = "Rose Pine";
+      name = "rose-pine-icons";
       package = pkgs.rose-pine-icon-theme;
     };
   };
