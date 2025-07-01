@@ -19,6 +19,10 @@
     swww
     grim
     slurp
+
+    rose-pine-hyprcursor
+    rose-pine-gtk-theme
+    rose-pine-kvantum
   ];
 
   security.polkit.enable = true;
