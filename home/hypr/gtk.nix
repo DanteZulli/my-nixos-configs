@@ -4,7 +4,7 @@
   gtk = {
     enable = true;
     cursorTheme = {
-      name = "rose-pine-cursor";
+      name = "BreezeX-RoséPine"; # Really? This is a joke right?
       package = pkgs.rose-pine-cursor;
     };
     theme = {
