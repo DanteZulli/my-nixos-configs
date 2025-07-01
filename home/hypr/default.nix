@@ -6,5 +6,6 @@
     ./wlsunset.nix
     (import ./waybar.nix { inherit hostname; })
     ./mako.nix
+    ./rofi.nix
   ];
 }
