@@ -20,7 +20,7 @@
 
       # Programs
       "$terminal" = "alacritty";
-      "$menu" = "rofi -show drun -show-icons";
+      "$menu" = "rofi -show drun";
       "$fileManager" = "dolphin";
 
       # Autostart
@@ -116,8 +116,16 @@
 
       # Input
       input = {
-        kb_layout = "us";
-        kb_variant = "intl";
+        kb_layout =
+          if hostname == "lachata" then
+            "us"
+          else if hostname == "negrita" then
+            "es"
+          else if hostname == "vivobook" then
+            "latam"
+          else
+            "us";
+        kb_variant = if hostname == "lachata" then "intl" else "";
         kb_model = "";
         kb_options = "";
         kb_rules = "";

@@ -10,8 +10,8 @@
 
     fontconfig = {
       defaultFonts = {
-        sansSerif = [ "CaskaydiaCove Nerd Font Mono" ];
-        serif = [ "CaskaydiaCove Nerd Font Mono" ];
+        sansSerif = [ "CaskaydiaCove Nerd Font" ];
+        serif = [ "CaskaydiaCove Nerd Font" ];
         monospace = [ "CaskaydiaCove Nerd Font Mono" ];
       };
     };
