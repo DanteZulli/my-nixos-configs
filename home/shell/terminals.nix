@@ -3,6 +3,7 @@
 {
   programs.alacritty = {
     enable = true;
+    theme = "rose_pine";
     settings = {
       window.opacity = 0.95;
       window.dynamic_padding = true;
