@@ -26,7 +26,6 @@
       # Autostart
       "exec-once" = [
         "waybar &"
-        "dunst &"
       ];
 
       # Environment variables
