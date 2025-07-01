@@ -11,5 +11,6 @@
     ./memory.nix
     ./graphics.nix
     ./fonts.nix
+    ./bluetooth.nix
   ];
 }
