@@ -21,8 +21,8 @@
     slurp
 
     rose-pine-hyprcursor
+    rose-pine-icon-theme
     rose-pine-gtk-theme
-    rose-pine-kvantum
   ];
 
   security.polkit.enable = true;
