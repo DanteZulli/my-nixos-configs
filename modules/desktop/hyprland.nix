@@ -15,7 +15,7 @@
     libnotify
     wl-clipboard
     rofi-wayland
-    swww
+    swaybg
     grim
     slurp
 

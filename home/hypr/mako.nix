@@ -5,7 +5,7 @@
   services.mako = {
     enable = true;
     settings = {
-      anchor = "top-center";
+      anchor = "top-right";
       border-radius = 6;
       border-size = 2;
       default-timeout = 5000;

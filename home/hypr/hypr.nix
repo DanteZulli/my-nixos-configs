@@ -26,6 +26,7 @@
       # Autostart
       "exec-once" = [
         "waybar &"
+        "swaybg -i ~/Pictures/Wallpapers/wall.png -m fill"
       ];
 
       # Environment variables
@@ -106,12 +107,6 @@
       # Master
       master = {
         new_status = "master";
-      };
-
-      # Misc
-      misc = {
-        force_default_wallpaper = -1;
-        disable_hyprland_logo = false;
       };
 
       # Input
