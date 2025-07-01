@@ -16,7 +16,7 @@
       layer = "top";
       margin = 10;
       markup = true;
-      font = "Ubuntu Nerd Font 12";
+      font = "UbuntuMono Nerd Font 12";
       background-color = "#26233a";
       text-color = "#e0def4";
       border-color = "#524f67";

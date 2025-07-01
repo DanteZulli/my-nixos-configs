@@ -11,10 +11,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    mako
     libnotify
     wl-clipboard
-    rofi-wayland
     swaybg
     grim
     slurp

@@ -20,7 +20,7 @@
 
       # Programs
       "$terminal" = "alacritty";
-      "$menu" = "rofi -show drun -show-icons";
+      "$menu" = "wofi --show drun --show-icons";
       "$fileManager" = "dolphin";
 
       # Autostart
