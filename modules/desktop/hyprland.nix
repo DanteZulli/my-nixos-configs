@@ -19,13 +19,10 @@
     swww
     grim
     slurp
-    libsForQt5.qt5ct
-    libsForQt5.qtstyleplugin-kvantum
 
     rose-pine-hyprcursor
     rose-pine-icon-theme
     rose-pine-gtk-theme
-    rose-pine-kvantum
   ];
 
   security.polkit.enable = true;
