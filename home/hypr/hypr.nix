@@ -26,7 +26,7 @@
       # Autostart
       "exec-once" = [
         "waybar &"
-        "swaybg -i ~/Pictures/Wallpapers/wall.png -m fill"
+        "swaybg -i ~/Pictures/Wallpapers/moon.jpg -m fill"
       ];
 
       # Environment variables
