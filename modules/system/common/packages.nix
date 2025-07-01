@@ -8,5 +8,6 @@
     lm_sensors
     fastfetch
     fortune
+    nwg-look
   ];
 }
