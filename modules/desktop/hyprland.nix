@@ -20,8 +20,6 @@
     slurp
 
     rose-pine-hyprcursor
-    rose-pine-icon-theme
-    rose-pine-gtk-theme
   ];
 
   security.polkit.enable = true;
