@@ -15,7 +15,23 @@
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
       font = {
-        size = 11;
+        size = 12;
+        normal = {
+          family = "UbuntuMono Nerd Font";
+          style = "Regular";
+        };
+        bold = {
+          family = "UbuntuMono Nerd Font";
+          style = "Bold";
+        };
+        italic = {
+          family = "UbuntuMono Nerd Font";
+          style = "Italic";
+        };
+        bold_italic = {
+          family = "UbuntuMono Nerd Font";
+          style = "Bold Italic";
+        };
       };
     };
   };
