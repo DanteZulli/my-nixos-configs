@@ -2,11 +2,11 @@
 
 {
   imports = [
-    (import ./hypr.nix { inherit hostname; })
+    (import ./hyprland.nix { inherit hostname; })
     ./qt.nix
     ./gtk.nix
     ./wlsunset.nix
-    (import ./waybar.nix { inherit hostname; })
+    ./waybar.nix
     ./mako.nix
     ./rofi.nix
   ];

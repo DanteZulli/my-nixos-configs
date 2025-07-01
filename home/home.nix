@@ -1,12 +1,11 @@
 { hostname, ... }:
 
 {
-
   imports = [
     ./core.nix
+    ./packages.nix
     ./programs
     ./shell
-    (import ./hypr { inherit hostname; })
+    (import ./desktop { inherit hostname; })
   ];
-
 }
