@@ -4,15 +4,17 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      nerd-fonts.caskaydia-cove
+      nerd-fonts.ubuntu
+      nerd-fonts.ubuntu-sans
+      nerd-fonts.ubuntu-mono
       nerd-fonts.symbols-only
     ];
 
     fontconfig = {
       defaultFonts = {
-        sansSerif = [ "CaskaydiaCove Nerd Font" ];
-        serif = [ "CaskaydiaCove Nerd Font" ];
-        monospace = [ "CaskaydiaCove Nerd Font Mono" ];
+        sansSerif = [ "UbuntuSans Nerd Font" ];
+        serif = [ "Ubuntu Nerd Font" ];
+        monospace = [ "UbuntuMono Nerd Font" ];
       };
     };
   };
