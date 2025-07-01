@@ -1,7 +1,7 @@
-{ ... }:
+{ hostname, ... }:
 
 {
   imports = [
-    ./hyprland
+    (import ./hyprland { inherit hostname; })
   ];
 }
