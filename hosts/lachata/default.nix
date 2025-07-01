@@ -5,10 +5,13 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/common
-    ../../modules/system/graphics/amd.nix
+    ../../modules/core
+    ../../modules/hardware
+    ../../modules/hardware/graphics/amd.nix
+    ../../modules/desktop
+    ../../modules/virtualisation
+    ../../modules/packages.nix
     ../../modules/users/dante.nix
-    ../../modules/desktop/hyprland.nix
   ];
 
   networking.hostName = "lachata";

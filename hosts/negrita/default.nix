@@ -5,8 +5,11 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/common
-    ../../modules/desktop/gnome.nix
+    ../../modules/core
+    ../../modules/hardware
+    ../../modules/desktop
+    ../../modules/virtualisation
+    ../../modules/packages.nix
     ../../modules/users/dante.nix
   ];
 

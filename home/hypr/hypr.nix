@@ -27,6 +27,7 @@
       "exec-once" = [
         "waybar &"
         "swaybg -i ~/Pictures/Wallpapers/moon.jpg -m fill"
+        "blueman-applet &"
       ];
 
       # Environment variables
