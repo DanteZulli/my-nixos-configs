@@ -12,6 +12,7 @@
     (discord.override {
       withOpenASAR = true;
     })
+    prusa-slicer
 
     # ===== MEDIA APPS =====
     qbittorrent
