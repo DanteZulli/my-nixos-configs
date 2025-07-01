@@ -12,8 +12,8 @@
       package = pkgs.rose-pine-gtk-theme;
     };
     iconTheme = {
-      name = "oomox-rose-pine";
-      package = pkgs.rose-pine-icon-theme;
+      name = "Dracula";
+      package = pkgs.dracula-icon-theme;
     };
   };
 }
