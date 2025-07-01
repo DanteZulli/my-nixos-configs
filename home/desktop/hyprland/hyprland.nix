@@ -20,8 +20,7 @@
 
       # Programs
       "$terminal" = "alacritty";
-      "$menu" = "wofi --show drun --show-icons";
-      "$fileManager" = "dolphin";
+      "$menu" = "wofi -a --show=drun -i -I";
 
       # Autostart
       "exec-once" = [
