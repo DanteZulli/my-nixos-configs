@@ -10,5 +10,6 @@
     fortune
     btop
     nwg-look
+    krabby
   ];
 }

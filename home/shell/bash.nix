@@ -7,10 +7,10 @@
     enable = true;
     enableCompletion = true;
     bashrcExtra = ''
-      fortune
+      krabby random 1
     '';
     shellAliases = {
-      nswitch = "sudo nixos-rebuild switch --flake ~/.my-nixos-configs#lachata";
+      nrs_lachata = "sudo nixos-rebuild switch --flake ~/.my-nixos-configs#lachata";
     };
   };
 }
