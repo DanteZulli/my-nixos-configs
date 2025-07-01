@@ -9,5 +9,6 @@
     fastfetch
     fortune
     btop
+    nwg-look
   ];
 }
