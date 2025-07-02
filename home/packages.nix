@@ -29,5 +29,7 @@
     xfce.thunar-volman
     xfce.thunar-media-tags-plugin
     xfce.thunar-vcs-plugin
+
+    eog
   ];
 }
