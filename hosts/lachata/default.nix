@@ -10,7 +10,6 @@
     ../../modules/hardware/graphics/amd.nix
     ../../modules/desktop
     ../../modules/virtualisation
-    ../../modules/packages.nix
     ../../modules/users/dante.nix
   ];
 

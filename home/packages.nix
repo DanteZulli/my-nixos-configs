@@ -1,12 +1,17 @@
 { pkgs, ... }:
 
 {
-  # ============= USER PACKAGES =============
-  # User level packages, available to the current user
-  # Location: ~/.nix-profile/bin/
-  # Permissions: No root privileges required
-  # Usage: Personal tools, applications
   home.packages = with pkgs; [
+    alejandra
+    nixfmt-rfc-style
+    btop
+    lm_sensors
+    fastfetch
+    wget
+    fortune
+    krabby
+    nwg-look
+    udiskie
     temurin-bin
     dbeaver-bin
     code-cursor
@@ -17,5 +22,12 @@
     qbittorrent
     ani-cli
     whatsie
+
+    # Thunar File Manager
+    thunar
+    thunar-archive-plugin
+    thunar-volman
+    thunar-media-tags-plugin
+    thunar-vcs-plugin
   ];
 }
