@@ -24,10 +24,10 @@
     whatsie
 
     # Thunar File Manager
-    thunar
-    thunar-archive-plugin
-    thunar-volman
-    thunar-media-tags-plugin
-    thunar-vcs-plugin
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-volman
+    xfce.thunar-media-tags-plugin
+    xfce.thunar-vcs-plugin
   ];
 }
