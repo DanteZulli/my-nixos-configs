@@ -16,5 +16,6 @@
 
     # ===== MEDIA APPS =====
     qbittorrent
+    ani-cli
   ];
 }
