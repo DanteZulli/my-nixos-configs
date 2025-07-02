@@ -20,7 +20,7 @@
 
       # Programs
       "$terminal" = "alacritty";
-      "$menu" = "wofi -a --show=drun -i -I";
+      "$menu" = "rofi -show drun -show-icons";
 
       # Autostart
       "exec-once" = [

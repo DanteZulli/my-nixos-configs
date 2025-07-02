@@ -8,6 +8,6 @@
     ./wlsunset.nix
     ./waybar.nix
     ./mako.nix
-    ./wofi.nix
+    ./rofi.nix
   ];
 }
