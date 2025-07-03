@@ -18,32 +18,29 @@
       ...
     }@inputs:
     let
-      # Function to create a NixOS system configuration for a given host
-      mkSystem =
-        host:
-        nixpkgs.lib.nixosSystem {
+      inherit (self) outputs;
+    in
+    {
+      # NixOs configuration entrypoint
+      # Available through 'sudo nixos-rebuild switch --flake .#hostname'
+      nixosConfigurations = {
+        "lachata" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            (./hosts + "/${host}")
+            ./hosts/lachata
+            # Home Manager (As a module of NixOS)
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.dante = import ./home/home.nix {
-                  hostname = host;
+                users."dante" = import ./home/home.nix {
+                  hostname = "lachata";
                 };
               };
             }
           ];
         };
-    in
-    {
-      # NixOS configuration entrypoint
-      # Available through 'sudo nixos-rebuild switch --flake .#hostname'
-      nixosConfigurations = {
-        lachata = mkSystem "lachata";
-        negrita = mkSystem "negrita";
       };
     };
 }
