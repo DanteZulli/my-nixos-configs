@@ -13,16 +13,37 @@
         margin = "0 0 0 0";
         modules-left = [
           "clock"
+          "clock#date"
         ];
         modules-center = [
           "hyprland/workspaces"
         ];
         modules-right = [
+          "cpu"
+          "memory"
+          "temperature"
+          "disk"
           "network"
           "pulseaudio"
           "battery"
           "tray"
         ];
+        "cpu" = {
+          format = "{usage}%  ";
+          interval = 5;
+        };
+        "memory" = {
+          format = "{used} / {total}  ";
+          interval = 5;
+        };
+        "temperature" = {
+          format = "{temperature}  ";
+          interval = 5;
+        };
+        "disk" = {
+          format = "{used} / {total}  ";
+          interval = 5;
+        };
         "hyprland/workspaces" = {
           format = "{icon}";
           format-icons = {
@@ -37,7 +58,11 @@
         "clock" = {
           timezone = "America/Argentina/Buenos_Aires";
           format = "󰥔  {:%H:%M}";
-          format-alt = "  {:%d/%m/%Y}";
+          tooltip = false;
+          interval = 60;
+        };
+        "clock#date" = {
+          format = "  {:%d/%m/%Y}";
           tooltip = false;
           interval = 60;
         };
@@ -138,6 +163,10 @@
         background-color: @love;
       }
 
+      #cpu,
+      #memory,
+      #temperature,
+      #disk,
       #clock,
       #battery,
       #pulseaudio,
@@ -154,12 +183,22 @@
         color: @gold;
       }
 
+      #memory,
       #network {
         color: @foam;
       }
 
+      #cpu,
       #pulseaudio {
         color: @iris;
+      }
+
+      #temperature {
+        color: @rose;
+      }
+
+      #disk {
+        color: @pine;
       }
     '';
   };
