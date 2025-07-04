@@ -5,7 +5,7 @@
     (import ./hyprland.nix { inherit hostname; })
     ./qt.nix
     ./gtk.nix
-    ./wlsunset.nix
+    ./hyprsunset.nix
     ./waybar.nix
     ./mako.nix
     ./rofi.nix
