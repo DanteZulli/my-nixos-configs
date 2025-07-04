@@ -13,7 +13,6 @@
         margin = "0 0 0 0";
         modules-left = [
           "clock"
-          "clock#date"
         ];
         modules-center = [
           "hyprland/workspaces"
@@ -21,8 +20,6 @@
         modules-right = [
           "cpu"
           "memory"
-          "temperature"
-          "disk"
           "network"
           "pulseaudio"
           "battery"
@@ -57,14 +54,9 @@
         };
         "clock" = {
           timezone = "America/Argentina/Buenos_Aires";
-          format = "󰥔  {:%H:%M}";
+          format = " 󱦟 {:%H:%M:%S %d/%m/%Y}";
           tooltip = false;
-          interval = 60;
-        };
-        "clock#date" = {
-          format = "  {:%d/%m/%Y}";
-          tooltip = false;
-          interval = 60;
+          interval = 1;
         };
         "battery" = {
           states = {
@@ -160,7 +152,7 @@
       }
 
       #workspaces button.urgent {
-        background-color: @love;
+        color: @love;
       }
 
       #cpu,
@@ -183,20 +175,21 @@
         color: @gold;
       }
 
-      #memory,
       #network {
         color: @foam;
       }
 
-      #cpu,
+
       #pulseaudio {
         color: @iris;
       }
 
+      #memory,
       #temperature {
         color: @rose;
       }
 
+      #cpu,
       #disk {
         color: @pine;
       }
