@@ -21,7 +21,14 @@
     prusa-slicer
     qbittorrent
     ani-cli
-    whatsie
+    zapzap
+    libnotify
+    wl-clipboard
+    swaybg
+    grim
+    slurp
+    hyprsunset
+    rose-pine-hyprcursor
 
     # Thunar File Manager
     xfce.thunar

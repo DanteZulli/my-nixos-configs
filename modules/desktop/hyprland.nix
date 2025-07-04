@@ -7,18 +7,9 @@
   };
 
   environment.sessionVariables = {
+    XDG_SESSION_TYPE = "wayland";
     NIXOS_OZONE_WL = "1";
   };
-
-  environment.systemPackages = with pkgs; [
-    libnotify
-    wl-clipboard
-    swaybg
-    grim
-    slurp
-
-    rose-pine-hyprcursor
-  ];
 
   security.polkit.enable = true;
 

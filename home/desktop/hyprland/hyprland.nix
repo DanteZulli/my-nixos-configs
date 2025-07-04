@@ -26,6 +26,7 @@
       "exec-once" = [
         "waybar &"
         "swaybg -i ~/Pictures/Wallpapers/moon.jpg -m fill"
+        "hyprsunset -t 4500 &"
         "blueman-applet &"
       ];
 
