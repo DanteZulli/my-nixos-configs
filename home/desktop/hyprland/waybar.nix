@@ -13,9 +13,9 @@
         margin = "0 0 0 0";
         modules-left = [
           "clock"
-          "hyprland/workspaces"
         ];
         modules-center = [
+          "hyprland/workspaces"
         ];
         modules-right = [
           "cpu"
