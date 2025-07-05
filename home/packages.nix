@@ -28,6 +28,8 @@
     grim
     slurp
     hyprsunset
+    teamspeak_server
+    teamspeak6-client
     rose-pine-hyprcursor
 
     # Thunar File Manager
