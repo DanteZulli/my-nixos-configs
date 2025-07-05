@@ -30,15 +30,14 @@
     hyprsunset
     teamspeak_server
     teamspeak6-client
+    nodejs
+    pnpm
     rose-pine-hyprcursor
-
-    # Thunar File Manager
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
     xfce.thunar-media-tags-plugin
     xfce.thunar-vcs-plugin
-
     eog
   ];
 }
