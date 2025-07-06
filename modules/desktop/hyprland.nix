@@ -8,7 +8,6 @@
 
   environment.sessionVariables = {
     XDG_SESSION_TYPE = "wayland";
-    TS3SERVER_LICENSE = "accept";
     NIXOS_OZONE_WL = "1";
   };
 
