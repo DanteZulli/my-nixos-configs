@@ -30,6 +30,7 @@
     hyprsunset
     teamspeak_server
     teamspeak6-client
+    hyprpicker
     nodejs
     pnpm
     rose-pine-hyprcursor

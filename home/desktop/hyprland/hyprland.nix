@@ -203,6 +203,8 @@
         "$mainMod, F, fullscreen"
         # Screenshot
         ", Print, exec, grim -l 0 -g \"$(slurp)\" - | wl-copy"
+        # Color Picker
+        "$mainMod, C, exec, hyprpicker -a"
       ];
 
       # Mouse bindings
