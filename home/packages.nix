@@ -3,43 +3,45 @@
 {
   home.packages = with pkgs; [
     alejandra
-    nixfmt-rfc-style
+    ani-cli
+    blueberry
     btop
-    lm_sensors
-    fastfetch
-    wget
-    fortune
-    krabby
-    nwg-look
-    udiskie
-    temurin-bin
-    dbeaver-bin
     code-cursor
+    dbeaver-bin
     (discord.override {
       withOpenASAR = true;
     })
-    prusa-slicer
-    qbittorrent
-    ani-cli
-    zapzap
-    libnotify
-    wl-clipboard
-    swaybg
+    eog
+    fastfetch
+    fortune
     grim
-    slurp
-    hyprsunset
-    teamspeak_server
-    teamspeak6-client
     hyprpicker
     hyprpolkitagent
+    hyprsunset
+    krabby
+    libnotify
+    lm_sensors
+    networkmanagerapplet
+    nixfmt-rfc-style
     nodejs
+    nwg-look
     pnpm
+    prusa-slicer
+    qbittorrent
     rose-pine-hyprcursor
+    slurp
+    swaybg
+    teamspeak6-client
+    teamspeak_server
+    temurin-bin
+    udiskie
+    wget
+    wl-clipboard
     xfce.thunar
     xfce.thunar-archive-plugin
-    xfce.thunar-volman
     xfce.thunar-media-tags-plugin
     xfce.thunar-vcs-plugin
-    eog
+    xfce.thunar-volman
+    zapzap
   ];
 }

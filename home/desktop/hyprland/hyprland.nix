@@ -29,7 +29,8 @@
         "hyprsunset -t 4500 &"
         "zapzap &"
         "systemctl --user start hyprpolkitagent"
-        "blueman-applet &"
+        "udiskie"
+        "nm-applet &"
       ];
 
       # Environment variables

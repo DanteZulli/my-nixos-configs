@@ -127,7 +127,6 @@
     enable = true;
     powerOnBoot = true;
   };
-  services.blueman.enable = true;
 
   # ==== Docker ====
   virtualisation.docker.enable = true;
