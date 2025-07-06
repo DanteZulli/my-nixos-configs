@@ -31,6 +31,7 @@
     teamspeak_server
     teamspeak6-client
     hyprpicker
+    hyprpolkitagent
     nodejs
     pnpm
     rose-pine-hyprcursor
