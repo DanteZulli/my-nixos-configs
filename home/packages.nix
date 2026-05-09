@@ -8,6 +8,7 @@
     fastfetch
     fortune
     gh
+    heroic
     just
     krabby
     mangohud
