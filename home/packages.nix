@@ -7,6 +7,7 @@
     direnv
     fastfetch
     fortune
+    gh
     just
     krabby
     mangohud
@@ -14,7 +15,9 @@
     nodejs_24
     opencode
     protonup-ng
+    podman-compose
     skyscraper
+    temurin-bin
     vscode-fhs
     zellij
   ];

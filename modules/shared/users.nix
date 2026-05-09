@@ -10,6 +10,7 @@
       "input"
       "render"
       "gamemode"
+      "podman"
     ];
   };
 }
