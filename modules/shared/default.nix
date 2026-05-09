@@ -7,6 +7,7 @@
     ./desktop.nix
     ./hardware.nix
     ./services.nix
+    ./gaming.nix
     ./shell.nix
     ./users.nix
   ];

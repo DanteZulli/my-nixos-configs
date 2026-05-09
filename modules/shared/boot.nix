@@ -3,4 +3,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  boot.kernelParams = [
+    "quiet"
+    "splash"
+    "console=/dev/null"
+  ];
+
+  boot.plymouth.enable = true;
 }

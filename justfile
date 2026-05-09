@@ -2,14 +2,14 @@ check:
     nix flake check
 
 format:
-    alejandra .
+    alejandra --quiet .
 
 rebuild: check
-    alejandra .
+    alejandra --quiet .
     sudo nixos-rebuild switch --flake .#lachata
 
 hm:
-    alejandra .
+    alejandra --quiet .
     home-manager switch --flake .#dante
 
 upgrade: rebuild hm
