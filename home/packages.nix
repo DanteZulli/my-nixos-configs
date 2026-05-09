@@ -11,8 +11,10 @@
     krabby
     mangohud
     micro
+    nodejs_24
     opencode
     protonup-ng
+    skyscraper
     vscode-fhs
     zellij
   ];
