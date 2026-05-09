@@ -8,6 +8,7 @@
       "wheel"
       "video"
       "input"
+      "render"
       "gamemode"
     ];
   };
