@@ -1,7 +1,6 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
+    alejandra
     opencode
     zed-editor
     just

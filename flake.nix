@@ -9,29 +9,32 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-    in
-    {
-      nixosConfigurations.lachata = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/lachata
-        ];
-      };
-
-      homeConfigurations.dante = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./home
-        ];
-      };
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
     };
+  in {
+    nixosConfigurations.lachata = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/lachata
+      ];
+    };
+
+    homeConfigurations.dante = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = {inherit inputs;};
+      modules = [
+        ./home
+      ];
+    };
+  };
 }
