@@ -2,6 +2,9 @@
   services.xserver.enable = true;
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.budgie.enable = true;
+  environment.budgie.excludePackages = with pkgs; [
+    mate.mate-terminal
+  ];
   services.xserver.xkb = {
     layout = "us";
     variant = "intl";

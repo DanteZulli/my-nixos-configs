@@ -1,17 +1,19 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     alejandra
+    alsa-utils
+    ani-cli
+    btop
+    direnv
+    fastfetch
+    fortune
+    just
+    krabby
     mangohud
     micro
     opencode
     protonup-ng
-    zed-editor
-    just
-    krabby
-    fortune
-    alsa-utils
-    fastfetch
-    btop
+    vscode-fhs
     zellij
   ];
 }
