@@ -17,6 +17,9 @@
     opencode
     protonup-ng
     podman-compose
+    yt-dlp
+    blanket
+    nicotine-plus
     skyscraper
     temurin-bin
     vscode-fhs
