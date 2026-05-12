@@ -17,5 +17,8 @@ upgrade: rebuild hm
 update:
     nix flake update
 
+sync:
+    git add . && git commit && git push
+
 clean:
     sudo nix-collect-garbage --delete-older-than 7d
