@@ -21,6 +21,7 @@ Flake-based NixOS + Home Manager configuration for my personal machines.
 │   └── shared/                   # Shared NixOS modules
 │       ├── boot.nix              # systemd-boot, latest kernel
 │       ├── desktop.nix           # X11, LightDM, Budgie
+│       ├── gaming.nix            # Steam, Gamemode, Gamescope
 │       ├── hardware.nix          # GPU/graphics enablement
 │       ├── networking.nix        # NetworkManager
 │       ├── nix.nix               # Flakes, GC config
@@ -32,8 +33,10 @@ Flake-based NixOS + Home Manager configuration for my personal machines.
     ├── core.nix                  # User config
     ├── packages.nix              # User packages
     ├── programs/
+    │   ├── direnv.nix
+    │   ├── firefox.nix
     │   ├── git.nix
-    │   └── firefox.nix
+    │   └── zoxide.nix
     └── shell/
         ├── alacritty.nix
         ├── starship.nix

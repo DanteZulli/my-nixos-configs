@@ -1,109 +1,26 @@
 #!/usr/bin/env bash
-# prepare-commit-msg: auto-generate conventional commit message from staged changes.
-# Usage: git commit  (no -m flag needed once core.editor is set to true)
-
-set -euo pipefail
+set -uo pipefail
 
 COMMIT_MSG_FILE=$1
 
-# Bail if -m or -F was already given (message already provided)
-if [ -s "$COMMIT_MSG_FILE" ]; then
+# skip if user already wrote a message
+if grep -q '^[a-zA-Z0-9]' "$COMMIT_MSG_FILE" 2>/dev/null; then
   exit 0
 fi
 
-# Gather staged changes
-STAGED=$(git diff --cached --name-status)
-ADDED=$(echo "$STAGED" | grep -c '^A')
-MODIFIED=$(echo "$STAGED" | grep -c '^M')
-DELETED=$(echo "$STAGED" | grep -c '^D')
+MSGS=()
 
-if [ -z "$STAGED" ]; then
-  echo "nothing staged" >"$COMMIT_MSG_FILE"
-  exit 0
-fi
+while IFS=$'\t' read -r status file; do
+  case "$status" in
+    A) MSGS+=("add: $file") ;;
+    M) MSGS+=("update: $file") ;;
+    D) MSGS+=("remove: $file") ;;
+    R*) MSGS+=("rename: ${file#* -> }") ;;
+  esac
+done < <(git diff --cached --name-status)
 
-# --- Detect conventional-commit type ---
-
-TYPE="chore"
-SCOPE=""
-SUMMARY=""
-
-# Rule: flake.lock only
-if echo "$STAGED" | grep -q 'flake.lock' && [ "$(echo "$STAGED" | grep -vc 'flake.lock')" -eq 0 ]; then
-  TYPE="chore"
-  SUMMARY="update flake inputs"
-fi
-
-# Rule: AGENTS.md or README.md only
-if echo "$STAGED" | grep -qE 'AGENTS\.md|README\.md' && [ "$(echo "$STAGED" | grep -vcE 'AGENTS\.md|README\.md')" -eq 0 ]; then
-  TYPE="docs"
-  SUMMARY="update documentation"
-fi
-
-# If no summary yet, derive from file patterns
-if [ -z "$SUMMARY" ]; then
-  # Detect new files
-  NEW_FILES=$(echo "$STAGED" | grep '^A' | awk '{print $2}')
-  MOD_FILES=$(echo "$STAGED" | grep '^M' | awk '{print $2}')
-
-  # home/packages.nix
-  if echo "$STAGED" | grep -q 'home/packages\.nix'; then
-    TYPE="feat"
-    SCOPE="packages"
-    SUMMARY="update user packages"
-  fi
-
-  # flake.nix
-  if echo "$STAGED" | grep -q 'flake\.nix'; then
-    TYPE="feat"
-    SCOPE="flake"
-    SUMMARY="update flake configuration"
-  fi
-
-  # New module file
-  if [ -n "$NEW_FILES" ]; then
-    for f in $NEW_FILES; do
-      if echo "$f" | grep -q 'modules/shared/'; then
-        TYPE="feat"
-        NAME=$(basename "$f" .nix)
-        SUMMARY="add $NAME module"
-        break
-      fi
-      if echo "$f" | grep -q 'home/programs/'; then
-        TYPE="feat"
-        NAME=$(basename "$f" .nix)
-        SUMMARY="add $name program"
-        break
-      fi
-    done
-  fi
-
-  # Deleted files
-  if [ "$DELETED" -gt 0 ] && [ -z "$SUMMARY" ]; then
-    TYPE="chore"
-    SUMMARY="remove files"
-  fi
-
-  # Fallback: just describe what changed
-  if [ -z "$SUMMARY" ]; then
-    if echo "$STAGED" | grep -q '\.nix'; then
-      TYPE="feat"
-      SUMMARY="update nix configuration"
-    elif echo "$STAGED" | grep -q 'flake\.lock'; then
-      SUMMARY="update flake inputs"
-    else
-      SUMMARY="update configuration"
-    fi
-  fi
-fi
-
-# Build final message
-if [ -n "$SCOPE" ]; then
-  echo "${TYPE}(${SCOPE}): ${SUMMARY}" >"$COMMIT_MSG_FILE"
+if [ ${#MSGS[@]} -gt 0 ]; then
+  printf "%s\n" "${MSGS[@]}" >"$COMMIT_MSG_FILE"
 else
-  echo "${TYPE}: ${SUMMARY}" >"$COMMIT_MSG_FILE"
+  echo "nothing staged" >"$COMMIT_MSG_FILE"
 fi
-
-# Add file list in body
-echo "" >>"$COMMIT_MSG_FILE"
-echo "$STAGED" >>"$COMMIT_MSG_FILE"
