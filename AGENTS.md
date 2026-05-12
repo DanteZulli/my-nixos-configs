@@ -13,6 +13,7 @@ just hm           # format + home-manager switch --flake .#dante
 just upgrade      # rebuild + hm
 just update       # nix flake update
 just clean        # sudo nix-collect-garbage --delete-older-than 7d
+just sync         # git add . + auto-commit + git push (one-shot sync)
 ```
 
 `rebuild` and `hm` both run `alejandra` automatically — no need to format separately.
@@ -39,6 +40,11 @@ home/                                     # home-manager user config
   shell/                                  #   zsh, starship, alacritty
 ```
 
+## Hard Rules
+
+- **ALWAYS** prefer home-manager (`./home/`) over ad-hoc config when adding user-level settings.
+- **NEVER** use `nix-env` (imperative, not reproducible). Use `home.packages` instead.
+
 ## Notable Patterns
 
 - **Unstable packages**: `pkgsUnstable` is passed via `extraSpecialArgs` in `flake.nix`. Use in `home.packages` via `++ [ pkgsUnstable.pkgname ]` for packages from nixos-unstable (e.g., `opencode` in `home/packages.nix`).
@@ -59,3 +65,5 @@ home/                                     # home-manager user config
 - Remote: `git@github.com:DanteZulli/my-nixos-configs.git`
 - Branch: `main`, `autoSetupRemote = true` configured.
 - Commit messages: imperative mood, lowercase, no trailing period.
+- `git sync` alias (add . + commit + push) is defined in `home/programs/git.nix`.
+- Auto-commit hook at `.githooks/prepare-commit-msg` requires `core.hooksPath = .githooks` and `core.editor = true` set locally. Run once: `git config core.hooksPath .githooks && git config core.editor true`
