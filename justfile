@@ -10,7 +10,7 @@ rebuild: check
 
 hm:
     alejandra --quiet .
-    home-manager switch --flake .#dante
+    home-manager switch -b backup --flake .#dante
 
 upgrade: rebuild hm
 
