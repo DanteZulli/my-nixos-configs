@@ -28,9 +28,9 @@
       nicotine-plus
       skyscraper
       temurin-bin
-      vscode-fhs
     ]
     ++ [
       pkgsUnstable.opencode
+      pkgsUnstable.vscode-fhs
     ];
 }
