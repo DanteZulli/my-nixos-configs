@@ -1,13 +1,10 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.zellij = {
     enable = true;
     package = pkgs.zellij;
 
     settings = {
-      show_startup_tips_timer_in_milliseconds = 0;
+      show_startup_tips = false;
     };
 
     extraConfig = ''
