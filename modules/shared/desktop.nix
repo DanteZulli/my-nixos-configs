@@ -3,6 +3,7 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.budgie.enable = true;
   environment.budgie.excludePackages = with pkgs; [
+    gnome-terminal
     mate.mate-terminal
   ];
   services.xserver.xkb = {
