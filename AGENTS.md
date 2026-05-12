@@ -13,6 +13,7 @@ just hm           # format + home-manager switch --flake .#dante
 just upgrade      # rebuild + hm
 just update       # nix flake update
 just clean        # sudo nix-collect-garbage --delete-older-than 7d
+just change <query>  # one-shot opencode run (headless), e.g. `just change update flake inputs`
 just sync         # git add . + auto-commit + git push (one-shot sync)
 ```
 

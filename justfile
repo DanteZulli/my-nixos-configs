@@ -20,5 +20,8 @@ update:
 sync:
     git add . && git commit && git push
 
+change +query:
+    opencode run --dangerously-skip-permissions "{{query}}"
+
 clean:
     sudo nix-collect-garbage --delete-older-than 7d
