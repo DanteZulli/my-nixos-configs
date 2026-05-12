@@ -29,7 +29,6 @@
       skyscraper
       temurin-bin
       vscode-fhs
-      zellij
     ]
     ++ [
       pkgsUnstable.opencode
