@@ -25,6 +25,7 @@
       podman-compose
       yt-dlp
       blanket
+      file-roller
       nicotine-plus
       skyscraper
       temurin-bin
