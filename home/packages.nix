@@ -22,10 +22,12 @@
       micro
       nodejs_24
       protonup-ng
+      simplescreenrecorder
       podman-compose
       yt-dlp
       blanket
       file-roller
+      libreoffice
       nicotine-plus
       skyscraper
       temurin-bin
