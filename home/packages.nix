@@ -30,6 +30,7 @@
       libreoffice
       nicotine-plus
       skyscraper
+      sqlite
       temurin-bin
     ]
     ++ [
