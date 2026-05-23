@@ -18,10 +18,6 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
     pkgsUnstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
@@ -31,15 +27,12 @@
       inherit system;
       specialArgs = {inherit inputs;};
       modules = [
+        inputs.home-manager.nixosModules.default
         ./hosts/lachata
-      ];
-    };
-
-    homeConfigurations.dante = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = {inherit inputs pkgsUnstable;};
-      modules = [
-        ./home
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.extraSpecialArgs = {inherit inputs pkgsUnstable;};
+        }
       ];
     };
   };
