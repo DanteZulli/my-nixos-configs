@@ -31,6 +31,7 @@
         ./hosts/lachata
         {
           home-manager.useGlobalPkgs = true;
+          home-manager.backupFileExtension = "bak";
           home-manager.extraSpecialArgs = {inherit inputs pkgsUnstable;};
         }
       ];

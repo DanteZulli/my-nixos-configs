@@ -14,7 +14,6 @@
       fortune
       fatsort
       ffmpeg
-      gh
       heroic
       just
       krabby
