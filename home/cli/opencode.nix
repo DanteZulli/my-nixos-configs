@@ -17,6 +17,13 @@ in {
       settings = {
         autoshare = false;
         autoupdate = false;
+
+        mcp = {
+          nixos = {
+            type = "local";
+            command = ["${pkgsUnstable.mcp-nixos}/bin/mcp-nixos"];
+          };
+        };
       };
 
       rules = ''
