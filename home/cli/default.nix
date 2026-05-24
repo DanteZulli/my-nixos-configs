@@ -1,10 +1,8 @@
 {...}: {
   imports = [
     ./git.nix
-    ./firefox.nix
+    ./gh.nix
     ./direnv.nix
     ./zoxide.nix
-    ./gh.nix
-    ./mangohud.nix
   ];
 }
