@@ -31,6 +31,7 @@
       skyscraper
       sqlite
       temurin-bin
+      eclipses.eclipse-jee
     ]
     ++ [
       pkgsUnstable.vscode-fhs
