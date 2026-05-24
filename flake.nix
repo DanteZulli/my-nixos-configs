@@ -22,19 +22,22 @@
       inherit system;
       config.allowUnfree = true;
     };
+
+    mkHost = hostname:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {inherit inputs;};
+        modules = [
+          inputs.home-manager.nixosModules.default
+          ./hosts/${hostname}
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.backupFileExtension = "bak";
+            home-manager.extraSpecialArgs = {inherit inputs pkgsUnstable;};
+          }
+        ];
+      };
   in {
-    nixosConfigurations.lachata = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = {inherit inputs;};
-      modules = [
-        inputs.home-manager.nixosModules.default
-        ./hosts/lachata
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.backupFileExtension = "bak";
-          home-manager.extraSpecialArgs = {inherit inputs pkgsUnstable;};
-        }
-      ];
-    };
+    nixosConfigurations.lachata = mkHost "lachata";
   };
 }
