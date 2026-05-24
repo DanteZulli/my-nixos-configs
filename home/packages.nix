@@ -33,7 +33,6 @@
       temurin-bin
     ]
     ++ [
-      pkgsUnstable.opencode
       pkgsUnstable.vscode-fhs
     ];
 }

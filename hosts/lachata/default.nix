@@ -11,6 +11,7 @@
   home-manager.users.dante = {...}: {
     imports = [../../home];
 
+    opencode.enable = true;
     git.enable = true;
     firefox.enable = true;
     direnv.enable = true;
