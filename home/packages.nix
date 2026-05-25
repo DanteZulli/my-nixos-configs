@@ -9,6 +9,7 @@
       alsa-utils
       ani-cli
       btop
+      docker-compose
       direnv
       fastfetch
       fortune
@@ -23,7 +24,6 @@
       nodejs_24
       protonup-ng
       simplescreenrecorder
-      podman-compose
       yt-dlp
       blanket
       file-roller

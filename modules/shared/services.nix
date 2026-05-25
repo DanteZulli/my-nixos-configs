@@ -10,11 +10,7 @@
 
   services.printing.enable = true;
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
-  };
+  virtualisation.docker.enable = true;
 
   zramSwap.enable = true;
 }

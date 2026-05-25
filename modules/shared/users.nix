@@ -10,7 +10,7 @@
       "input"
       "render"
       "gamemode"
-      "podman"
+      "docker"
     ];
   };
 }
