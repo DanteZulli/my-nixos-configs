@@ -15,6 +15,7 @@
       fatsort
       ffmpeg
       heroic
+      hugo
       just
       krabby
       mangohud
