@@ -1,69 +1,51 @@
 # Dante's NixOS Configuration
 
-Flake-based NixOS + Home Manager configuration for my personal machines.
+Flake-based NixOS + Home Manager configuration for **x86_64-linux** machines.
 
-## Hosts
+Currently manages a single host (`lachata`) with a Budgie desktop, gaming
+toolchain, and a fully declarative user environment.
 
-| Hostname | Hardware | Role |
-|----------|----------|------|
-| `lachata` | x86_64-linux | Personal desktop |
+## Layout
 
-## Structure
+| Path | What lives there |
+|------|------------------|
+| `hosts/<name>/` | Per-machine config: imports system modules + enables desired user features. Each host also has an auto-generated `hardware-configuration.nix`. |
+| `modules/nixos/` | **System-level** modules applied to every host: boot, desktop, gaming, GPU, networking, Nix daemon, services, timezone/locale, users. |
+| `modules/home/` | **User-level** modules (Home Manager) for `dante`: packages, CLI tools, GUI apps, and shell config. All are **feature-gated** — each has an `enable` option toggled per host. |
 
-```
-.
-├── flake.nix                     # Entry point
-├── hosts/
-│   └── lachata/                  # NixOS system config
-│       ├── default.nix
-│       └── hardware-configuration.nix
-├── modules/
-│   └── shared/                   # Shared NixOS modules
-│       ├── boot.nix              # systemd-boot, latest kernel
-│       ├── desktop.nix           # X11, LightDM, Budgie
-│       ├── gaming.nix            # Steam, Gamemode, Gamescope
-│       ├── hardware.nix          # GPU/graphics enablement
-│       ├── networking.nix        # NetworkManager
-│       ├── nix.nix               # Flakes, GC config
-│       ├── services.nix          # PipeWire, CUPS, Podman, zram
-│       ├── shell.nix             # Zsh system-wide
-│       ├── timezone.nix          # America/Argentina/Buenos_Aires
-│       └── users.nix             # User: dante
-└── home/                         # Home Manager (user-level)
-    ├── core.nix                  # User config
-    ├── packages.nix              # User packages
-    ├── programs/
-    │   ├── direnv.nix
-    │   ├── firefox.nix
-    │   ├── git.nix
-    │   └── zoxide.nix
-    └── shell/
-        ├── alacritty.nix
-        ├── starship.nix
-        └── zsh.nix
-```
+## Prerequisites
 
-## Quickstart
+- **NixOS** (installed, any version)
+- **Flakes** enabled (`nix.settings.experimental-features = [ "nix-command" "flakes" ]`)
+- **`just`** command runner (or install via `nix-shell -p just`)
+
+## Setup on a new machine
 
 ```bash
-just check       # Validate flake
-just rebuild     # Build + switch system
-just hm          # Build + switch home-manager
-just upgrade     # Both at once
-just format      # Format all .nix files with alejandra
-just update      # Update flake lockfile
-just clean       # GC old Nix store generations
+# 1. Clone the repo
+git clone git@github.com:DanteZulli/my-nixos-configs.git /etc/nixos
+cd /etc/nixos
+
+# 2. Generate hardware config for this machine
+sudo nixos-generate-config --show-hardware-config > hosts/<new-hostname>/hardware-configuration.nix
+
+# 3. Create a host entry
+#    Copy hosts/lachata/default.nix to hosts/<new-hostname>/default.nix,
+#    update the hostname, enable/disable feature modules as needed.
+
+# 4. Register the host in flake.nix
+#    Add: nixosConfigurations.<new-hostname> = mkHost "<new-hostname>";
+
+# 5. Rebuild
+sudo nixos-rebuild switch --flake .#<new-hostname>
+
 ```
 
-## Cheatsheet
+## Day-to-day commands
 
-```bash
-j check       # alias via zsh (runs `just check`)
-nix flake check                      # syntax/type validation
-nix-instantiate --eval --strict <file>  # eval a single file
-```
-
-## Requirements
-
-- NixOS with flakes enabled
-- `just` command runner
+| Command | What it does |
+|---------|-------------|
+| `just rebuild` | Flake check → format (alejandra) → nixos-rebuild switch |
+| `just debug` | Same as rebuild with `--show-trace --verbose` |
+| `just update` | `nix flake update` (refresh all inputs to latest) |
+| `j <command>` | Zsh alias: runs `just` from the nixos dir regardless of cwd (available when shell module is enabled) |

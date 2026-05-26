@@ -22,14 +22,3 @@ debug:
 update:
     nix flake update
 
-# ---
-
-# One-shot opencode run (e.g. `just change update flake inputs`)
-[group('opencode')]
-change +query:
-    opencode run --dangerously-skip-permissions "{{query}}"
-
-# Git add, commit, and push (alias for the alias)
-[group('git')]
-sync:
-    git add . && git commit && git push

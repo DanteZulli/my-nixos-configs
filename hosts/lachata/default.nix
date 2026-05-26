@@ -1,7 +1,7 @@
 {inputs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/shared
+    ../../modules/nixos
   ];
 
   networking.hostName = "lachata";
@@ -9,7 +9,7 @@
   system.stateVersion = "25.11";
 
   home-manager.users.dante = {...}: {
-    imports = [../../home];
+    imports = [../../modules/home];
 
     opencode.enable = true;
     git.enable = true;
