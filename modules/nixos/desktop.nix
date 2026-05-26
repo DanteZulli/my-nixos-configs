@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.autoSuspend = false;
   services.xserver.desktopManager.budgie.enable = true;
   environment.budgie.excludePackages = with pkgs; [
     mate.engrampa
