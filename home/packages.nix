@@ -6,6 +6,7 @@
   home.packages = with pkgs;
     [
       alejandra
+      android-tools
       alsa-utils
       ani-cli
       btop

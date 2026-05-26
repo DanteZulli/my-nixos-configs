@@ -12,4 +12,6 @@
     variant = "intl";
   };
   console.keyMap = "us-acentos";
+
+  programs.niri.enable = true;
 }

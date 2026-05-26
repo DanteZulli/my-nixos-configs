@@ -18,6 +18,14 @@ in {
         autoshare = false;
         autoupdate = false;
 
+        permission = {
+          bash = {
+            "just *" = "deny";
+            "j *" = "deny";
+            "git *" = "ask";
+          };
+        };
+
         mcp = {
           nixos = {
             type = "local";
