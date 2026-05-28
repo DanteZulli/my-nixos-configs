@@ -12,6 +12,8 @@
       btop
       docker-compose
       direnv
+      discord
+      dbeaver-bin
       fastfetch
       fortune
       fatsort

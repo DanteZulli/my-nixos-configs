@@ -23,6 +23,7 @@ in {
             "just *" = "deny";
             "j *" = "deny";
             "git *" = "ask";
+            "gh *" = "ask";
           };
         };
 
