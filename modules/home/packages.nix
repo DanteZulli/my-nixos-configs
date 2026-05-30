@@ -40,6 +40,8 @@
       i3status
       xfce.thunar
       lxappearance
+      gruvbox-dark-gtk
+      gruvbox-dark-icons-gtk
     ]
     ++ [
       pkgsUnstable.vscode-fhs

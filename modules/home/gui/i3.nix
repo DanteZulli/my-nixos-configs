@@ -16,16 +16,19 @@ in {
         modifier = "Mod1";
         terminal = "alacritty";
         gaps = {
-          inner = 10;
-          outer = 5;
+          inner = 6;
+          outer = 3;
         };
-        bars = [{
-          position = "top";
-          statusCommand = "${pkgs.i3status}/bin/i3status";
-        }];
+        bars = [
+          {
+            position = "top";
+            statusCommand = "${pkgs.i3status}/bin/i3status";
+          }
+        ];
       };
       extraConfig = ''
-        default_border pixel 2
+        default_border pixel 3
+        workspace 1
       '';
     };
 
