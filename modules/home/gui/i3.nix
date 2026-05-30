@@ -50,10 +50,12 @@ in {
           };
           background = "#1f1f28";
         };
-        bars = [{
-          position = "top";
-          statusCommand = "${pkgs.i3status}/bin/i3status";
-        }];
+        bars = [
+          {
+            position = "top";
+            statusCommand = "${pkgs.i3status}/bin/i3status";
+          }
+        ];
       };
       extraConfig = ''
         default_border pixel 3
