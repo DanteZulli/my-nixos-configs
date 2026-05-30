@@ -15,6 +15,10 @@ in {
       config = {
         modifier = "Mod1";
         terminal = "alacritty";
+        fonts = {
+          names = ["System Sans"];
+          size = 11.0;
+        };
         gaps = {
           inner = 6;
           outer = 3;
@@ -53,13 +57,74 @@ in {
         bars = [
           {
             position = "top";
-            statusCommand = "${pkgs.i3status}/bin/i3status";
+            fonts = {
+              names = ["System Sans"];
+              size = 11.0;
+            };
+            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
+            colors = {
+              background = "#1f1f28";
+              statusline = "#dcd7ba";
+              separator = "#54546d";
+              focusedWorkspace = {
+                border = "#98bb6c";
+                background = "#2a2a37";
+                text = "#dcd7ba";
+              };
+              inactiveWorkspace = {
+                border = "#54546d";
+                background = "#1f1f28";
+                text = "#54546d";
+              };
+              urgentWorkspace = {
+                border = "#e82424";
+                background = "#e82424";
+                text = "#dcd7ba";
+              };
+            };
           }
         ];
       };
       extraConfig = ''
         default_border pixel 3
       '';
+    };
+
+    programs.i3status-rust = {
+      enable = true;
+      bars = {
+        top = {
+          blocks = [
+            {
+              block = "time";
+              interval = 60;
+              format = "$icon $timestamp.datetime(f:'%a %d/%m %k:%M %p')";
+            }
+          ];
+          settings = {
+            theme = {
+              theme = "plain";
+              overrides = {
+                idle_bg = "#1f1f28";
+                idle_fg = "#dcd7ba";
+                good_bg = "#1f1f28";
+                good_fg = "#98bb6c";
+                warning_bg = "#1f1f28";
+                warning_fg = "#ffa066";
+                critical_bg = "#1f1f28";
+                critical_fg = "#e82424";
+                info_bg = "#1f1f28";
+                info_fg = "#7e9cd8";
+                separator_bg = "#1f1f28";
+                separator_fg = "#54546d";
+              };
+            };
+            icons = {
+              icons = "none";
+            };
+          };
+        };
+      };
     };
 
     home.file.".background-image".source = wallpaper;
