@@ -24,6 +24,7 @@ in {
             "j *" = "deny";
             "git *" = "ask";
             "gh *" = "ask";
+            "rm *" = "ask";
           };
         };
 

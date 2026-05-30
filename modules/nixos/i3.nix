@@ -7,8 +7,4 @@
     defaultSession = "none+i3";
     ly.enable = true;
   };
-  security.pam.services = {
-    i3lock.enable = true;
-    i3lock-color.enable = true;
-  };
 }

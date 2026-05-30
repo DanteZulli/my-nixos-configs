@@ -38,7 +38,8 @@
       eclipses.eclipse-jee
       dmenu
       i3status
-      i3lock
+      xfce.thunar
+      lxappearance
     ]
     ++ [
       pkgsUnstable.vscode-fhs
