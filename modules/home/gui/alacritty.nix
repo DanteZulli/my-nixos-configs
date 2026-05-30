@@ -4,6 +4,7 @@
   ...
 }: let
   cfg = config.alacritty;
+  theme = ./alacritty/kanagawa.toml;
 in {
   options.alacritty.enable = lib.mkEnableOption "alacritty";
 
@@ -11,6 +12,7 @@ in {
     programs.alacritty = {
       enable = true;
       settings = {
+        general.import = ["~/.config/alacritty/kanagawa.toml"];
         window.opacity = 0.95;
         window.dynamic_padding = true;
         window.padding = {
@@ -22,5 +24,7 @@ in {
         selection.save_to_clipboard = true;
       };
     };
+
+    home.file.".config/alacritty/kanagawa.toml".source = theme;
   };
 }
