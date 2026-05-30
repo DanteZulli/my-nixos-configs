@@ -28,7 +28,6 @@ in {
       };
       extraConfig = ''
         default_border pixel 3
-        workspace 1
       '';
     };
 
