@@ -19,12 +19,41 @@ in {
           inner = 6;
           outer = 3;
         };
-        bars = [
-          {
-            position = "top";
-            statusCommand = "${pkgs.i3status}/bin/i3status";
-          }
-        ];
+        colors = {
+          focused = {
+            border = "#98bb6c";
+            background = "#1f1f28";
+            text = "#dcd7ba";
+            indicator = "#98bb6c";
+            childBorder = "#98bb6c";
+          };
+          focusedInactive = {
+            border = "#727169";
+            background = "#1f1f28";
+            text = "#727169";
+            indicator = "#727169";
+            childBorder = "#727169";
+          };
+          unfocused = {
+            border = "#54546d";
+            background = "#1f1f28";
+            text = "#54546d";
+            indicator = "#54546d";
+            childBorder = "#54546d";
+          };
+          urgent = {
+            border = "#e82424";
+            background = "#e82424";
+            text = "#dcd7ba";
+            indicator = "#e82424";
+            childBorder = "#e82424";
+          };
+          background = "#1f1f28";
+        };
+        bars = [{
+          position = "top";
+          statusCommand = "${pkgs.i3status}/bin/i3status";
+        }];
       };
       extraConfig = ''
         default_border pixel 3
