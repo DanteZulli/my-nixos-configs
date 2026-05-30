@@ -36,6 +36,9 @@
       sqlite
       temurin-bin
       eclipses.eclipse-jee
+      dmenu
+      i3status
+      i3lock
     ]
     ++ [
       pkgsUnstable.vscode-fhs

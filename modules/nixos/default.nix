@@ -4,7 +4,8 @@
     ./nix.nix
     ./timezone.nix
     ./networking.nix
-    ./desktop.nix
+    ./i3.nix
+    ./keyboard.nix
     ./hardware.nix
     ./services.nix
     ./gaming.nix

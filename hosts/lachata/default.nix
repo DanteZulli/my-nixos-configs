@@ -20,5 +20,6 @@
     zsh.enable = true;
     starship.enable = true;
     alacritty.enable = true;
+    i3.enable = true;
   };
 }
