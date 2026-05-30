@@ -5,6 +5,7 @@
   ...
 }: let
   cfg = config.i3;
+  wallpaper = ../../../assets/background-image.png;
 in {
   options.i3.enable = lib.mkEnableOption "i3";
 
@@ -24,8 +25,10 @@ in {
         }];
       };
       extraConfig = ''
-        default_border none
+        default_border pixel 2
       '';
     };
+
+    home.file.".background-image".source = wallpaper;
   };
 }
