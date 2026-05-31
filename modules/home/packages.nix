@@ -10,6 +10,7 @@
       alsa-utils
       ani-cli
       btop
+      calibre
       docker-compose
       direnv
       discord
