@@ -13,7 +13,7 @@ in {
     xsession.windowManager.i3 = {
       enable = true;
       config = {
-        modifier = "Mod1";
+        modifier = "Mod4";
         terminal = "alacritty";
         fonts = {
           names = ["System Sans"];
@@ -87,6 +87,12 @@ in {
       };
       extraConfig = ''
         default_border pixel 3
+
+        # Volume keys (PipeWire/WirePlumber)
+        bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+        bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+        bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+        bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
       '';
     };
 
@@ -96,9 +102,13 @@ in {
         top = {
           blocks = [
             {
+              block = "sound";
+              device_kind = "sink";
+            }
+            {
               block = "time";
               interval = 60;
-              format = "$icon $timestamp.datetime(f:'%a %d/%m %k:%M %p')";
+              format = "$timestamp.datetime(f:'%a %d/%m %k:%M %p')";
             }
           ];
           settings = {
@@ -118,9 +128,6 @@ in {
                 separator_bg = "#1f1f28";
                 separator_fg = "#54546d";
               };
-            };
-            icons = {
-              icons = "none";
             };
           };
         };
