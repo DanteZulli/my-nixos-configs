@@ -88,11 +88,13 @@ in {
       extraConfig = ''
         default_border pixel 3
 
-        # Volume keys (PipeWire/WirePlumber)
+        # Volume keys (PipeWire)
         bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
         bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
         bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-        bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+        # Screenshot keys
+        bindsym --release Print exec --no-startup-id gnome-screenshot -ca
       '';
     };
 

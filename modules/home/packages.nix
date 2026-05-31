@@ -16,6 +16,7 @@
       dbeaver-bin
       fastfetch
       fortune
+      gnome-screenshot
       fatsort
       ffmpeg
       heroic
