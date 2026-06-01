@@ -88,6 +88,8 @@ in {
       extraConfig = ''
         default_border pixel 3
 
+        exec_always --no-startup-id thunar --daemon
+
         # Volume keys (PipeWire)
         bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
         bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-

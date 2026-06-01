@@ -41,6 +41,7 @@
       dmenu
       i3status
       xfce.thunar
+      xfce.thunar-volman
       lxappearance
       kanagawa-gtk-theme
       kanagawa-icon-theme
