@@ -89,6 +89,7 @@ in {
         default_border pixel 3
 
         exec_always --no-startup-id thunar --daemon
+        exec_always --no-startup-id bash -c "for id in \$(xinput list | grep pointer | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop \$id 'libinput Accel Profile Enabled' 0, 1; done"
 
         # Volume keys (PipeWire)
         bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
