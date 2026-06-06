@@ -12,7 +12,7 @@ in {
     services.polybar = {
       enable = true;
       package = pkgs.polybarFull;
-      script = "";
+      script = "polybar main &";
       settings = {
         "bar/main" = {
           width = "100%";
@@ -23,11 +23,10 @@ in {
           foreground = "#dcd7ba";
           line-size = 2;
           border-bottom-size = 0;
-          module-margin-left = 2;
-          module-margin-right = 2;
-          modules-left = "i3 title";
+          separator = " | ";
+          modules-left = "i3";
           modules-center = "date";
-          modules-right = "fs volume memory cpu network";
+          modules-right = "volume memory cpu network tray";
           font = ["Source Code Pro:size=11;2"];
           cursor-click = "pointer";
           cursor-scroll = "ns-resize";
@@ -47,17 +46,8 @@ in {
           label-unfocused = "%name%";
           label-unfocused-foreground = "#54546d";
           label-unfocused-padding = 1;
-          label-urgent = "%name%";
           label-urgent-foreground = "#e82424";
           label-urgent-padding = 1;
-        };
-
-        "module/title" = {
-          type = "internal/xwindow";
-          format = "<label>";
-          label = "%name%";
-          label-maxlen = 60;
-          label-foreground = "#c8c093";
         };
 
         "module/date" = {
@@ -67,16 +57,9 @@ in {
           label = "%date%";
         };
 
-        "module/fs" = {
-          type = "internal/fs";
-          mountpoint = "/";
-          label = "%free%";
-          label-foreground = "#c8c093";
-        };
-
         "module/volume" = {
           type = "internal/pulseaudio";
-          label-volume = "%percentage%%";
+          label-volume = "%{F#98bb6c}vol%{F-} %percentage%%";
           label-muted = "muted";
           label-muted-foreground = "#727169";
           label-volume-foreground = "#c8c093";
@@ -84,23 +67,28 @@ in {
 
         "module/memory" = {
           type = "internal/memory";
-          label = "ram %percentage_used%%";
+          label = "%{F#98bb6c}ram%{F-} %percentage_used%%";
           label-foreground = "#c8c093";
         };
 
         "module/cpu" = {
           type = "internal/cpu";
-          label = "cpu %percentage%%";
+          label = "%{F#98bb6c}cpu%{F-} %percentage%%";
           label-foreground = "#c8c093";
         };
 
         "module/network" = {
           type = "internal/network";
           interface-type = "wired";
-          label-connected = "%local_ip%";
+          label-connected = "%{F#98bb6c}%ifname%%{F-} %local_ip%";
           label-disconnected = "disconnected";
           label-disconnected-foreground = "#e82424";
           label-connected-foreground = "#c8c093";
+        };
+
+        "module/tray" = {
+          type = "internal/tray";
+          tray-spacing = 5;
         };
       };
     };
