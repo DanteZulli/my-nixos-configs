@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./boot.nix
+    ./fonts.nix
     ./nix.nix
     ./timezone.nix
     ./networking.nix

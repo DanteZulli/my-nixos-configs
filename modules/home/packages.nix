@@ -47,6 +47,8 @@
       lxappearance
       kanagawa-gtk-theme
       kanagawa-icon-theme
+      psmisc
+      source-code-pro
     ]
     ++ [
       pkgsUnstable.vscode-fhs

@@ -23,43 +23,84 @@ in {
           foreground = "#dcd7ba";
           line-size = 2;
           border-bottom-size = 0;
-          padding-left = 2;
-          padding-right = 2;
           module-margin-left = 2;
           module-margin-right = 2;
-          font = [
-            "System Sans:size=11;2"
-          ];
-          modules-left = "i3";
-          modules-right = "date";
+          modules-left = "i3 title";
+          modules-center = "date";
+          modules-right = "fs volume memory cpu network";
+          font = ["Source Code Pro:size=11;2"];
           cursor-click = "pointer";
           cursor-scroll = "ns-resize";
         };
+
         "module/i3" = {
           type = "internal/i3";
           format = "<label-state> <label-mode>";
           label-focused = "%name%";
-          label-focused-background = "#2a2a37";
           label-focused-foreground = "#dcd7ba";
-          label-focused-border = "#98bb6c";
+          label-focused-background = "#2a2a37";
+          label-focused-underline = "#98bb6c";
           label-focused-padding = 1;
+          label-visible = "%name%";
+          label-visible-foreground = "#727169";
+          label-visible-padding = 1;
           label-unfocused = "%name%";
           label-unfocused-foreground = "#54546d";
           label-unfocused-padding = 1;
-          label-visible = "%name%";
-          label-visible-background = "#2a2a37";
-          label-visible-foreground = "#727169";
-          label-visible-padding = 1;
           label-urgent = "%name%";
-          label-urgent-background = "#1f1f28";
           label-urgent-foreground = "#e82424";
           label-urgent-padding = 1;
         };
+
+        "module/title" = {
+          type = "internal/xwindow";
+          format = "<label>";
+          label = "%name%";
+          label-maxlen = 60;
+          label-foreground = "#c8c093";
+        };
+
         "module/date" = {
           type = "internal/date";
           interval = 60;
-          date = "%a %d/%m %H:%M";
+          date = "%a %d/%m %H:%M:%S";
           label = "%date%";
+        };
+
+        "module/fs" = {
+          type = "internal/fs";
+          mountpoint = "/";
+          label = "%free%";
+          label-foreground = "#c8c093";
+        };
+
+        "module/volume" = {
+          type = "internal/pulseaudio";
+          label-volume = "%percentage%%";
+          label-muted = "muted";
+          label-muted-foreground = "#727169";
+          label-volume-foreground = "#c8c093";
+        };
+
+        "module/memory" = {
+          type = "internal/memory";
+          label = "ram %percentage_used%%";
+          label-foreground = "#c8c093";
+        };
+
+        "module/cpu" = {
+          type = "internal/cpu";
+          label = "cpu %percentage%%";
+          label-foreground = "#c8c093";
+        };
+
+        "module/network" = {
+          type = "internal/network";
+          interface-type = "wired";
+          label-connected = "%local_ip%";
+          label-disconnected = "disconnected";
+          label-disconnected-foreground = "#e82424";
+          label-connected-foreground = "#c8c093";
         };
       };
     };

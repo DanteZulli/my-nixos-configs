@@ -6,14 +6,12 @@ list:
 # Build and switch NixOS system + home (#lachata)
 [group('nix')]
 rebuild:
-    nix flake check
     alejandra --quiet .
     sudo nixos-rebuild switch --flake .#lachata
 
 # Same as rebuild with verbose debug output
 [group('nix')]
 debug:
-    nix flake check
     alejandra --quiet .
     sudo nixos-rebuild switch --flake .#lachata --show-trace --verbose
 
