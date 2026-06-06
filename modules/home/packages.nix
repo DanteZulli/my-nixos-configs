@@ -40,6 +40,9 @@
       temurin-bin
       eclipses.eclipse-jee
       dmenu
+      mate.engrampa
+      unzip
+      p7zip
       i3status
       vlc
       lxappearance

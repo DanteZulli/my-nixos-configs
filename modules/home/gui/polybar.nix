@@ -76,6 +76,7 @@ in {
           label-unfocused = "%name%";
           label-unfocused-foreground = "#54546d";
           label-unfocused-padding = 1;
+          label-urgent = "%name%";
           label-urgent-foreground = colors.brightRed;
           label-urgent-padding = 1;
         };
@@ -83,7 +84,7 @@ in {
         "module/date" = {
           type = "internal/date";
           interval = 60;
-          date = "%{F${colors.brightMagenta}}%a%{F-} %d%{F${colors.brightMagenta}}/%{F-}%m %H%{F${colors.brightMagenta}}:%{F-}%M%{F${colors.brightMagenta}}:%{F-}%S";
+          date = "%{F${colors.brightGreen}}%a%{F-} %d%{F${colors.brightMagenta}}/%{F-}%m %H%{F${colors.brightMagenta}}:%{F-}%M%{F${colors.brightMagenta}}:%{F-}%S";
           label = "%date%";
         };
 
