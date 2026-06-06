@@ -5,6 +5,35 @@
   ...
 }: let
   cfg = config.polybar;
+
+  colors = {
+    bg = "#1f1f28";
+    fg = "#dcd7ba";
+
+    black = "#090618";
+    red = "#c34043";
+    green = "#76946a";
+    yellow = "#c0a36e";
+    blue = "#7e9cd8";
+    magenta = "#957fb8";
+    cyan = "#6a9589";
+    white = "#c8c093";
+
+    brightBlack = "#727169";
+    brightRed = "#e82424";
+    brightGreen = "#98bb6c";
+    brightYellow = "#e6c384";
+    brightBlue = "#7fb4ca";
+    brightMagenta = "#938aa9";
+    brightCyan = "#7aa89f";
+    brightWhite = "#dcd7ba";
+
+    selectionBg = "#2d4f67";
+    selectionFg = "#c8c093";
+
+    orange = "#ffa066";
+    salmon = "#ff5d62";
+  };
 in {
   options.polybar.enable = lib.mkEnableOption "polybar";
 
@@ -19,11 +48,12 @@ in {
           height = 24;
           radius = 0;
           fixed-center = true;
-          background = "#1f1f28";
-          foreground = "#dcd7ba";
+          background = colors.bg;
+          foreground = colors.fg;
           line-size = 2;
           border-bottom-size = 0;
-          separator = " | ";
+          separator = " %{F${colors.brightMagenta}}/%{F-} ";
+          padding-right = 1;
           modules-left = "i3";
           modules-center = "date";
           modules-right = "volume memory cpu network tray";
@@ -36,54 +66,54 @@ in {
           type = "internal/i3";
           format = "<label-state> <label-mode>";
           label-focused = "%name%";
-          label-focused-foreground = "#dcd7ba";
+          label-focused-foreground = colors.fg;
           label-focused-background = "#2a2a37";
-          label-focused-underline = "#98bb6c";
+          label-focused-underline = colors.brightGreen;
           label-focused-padding = 1;
           label-visible = "%name%";
-          label-visible-foreground = "#727169";
+          label-visible-foreground = colors.brightBlack;
           label-visible-padding = 1;
           label-unfocused = "%name%";
           label-unfocused-foreground = "#54546d";
           label-unfocused-padding = 1;
-          label-urgent-foreground = "#e82424";
+          label-urgent-foreground = colors.brightRed;
           label-urgent-padding = 1;
         };
 
         "module/date" = {
           type = "internal/date";
           interval = 60;
-          date = "%a %d/%m %H:%M:%S";
+          date = "%{F${colors.brightMagenta}}%a%{F-} %d%{F${colors.brightMagenta}}/%{F-}%m %H%{F${colors.brightMagenta}}:%{F-}%M%{F${colors.brightMagenta}}:%{F-}%S";
           label = "%date%";
         };
 
         "module/volume" = {
           type = "internal/pulseaudio";
-          label-volume = "%{F#98bb6c}vol%{F-} %percentage%%";
+          label-volume = "%{F${colors.brightGreen}}vol%{F-} %percentage%%";
           label-muted = "muted";
-          label-muted-foreground = "#727169";
-          label-volume-foreground = "#c8c093";
+          label-muted-foreground = colors.brightBlack;
+          label-volume-foreground = colors.white;
         };
 
         "module/memory" = {
           type = "internal/memory";
-          label = "%{F#98bb6c}ram%{F-} %percentage_used%%";
-          label-foreground = "#c8c093";
+          label = "%{F${colors.brightGreen}}ram%{F-} %percentage_used%%";
+          label-foreground = colors.white;
         };
 
         "module/cpu" = {
           type = "internal/cpu";
-          label = "%{F#98bb6c}cpu%{F-} %percentage%%";
-          label-foreground = "#c8c093";
+          label = "%{F${colors.brightGreen}}cpu%{F-} %percentage%%";
+          label-foreground = colors.white;
         };
 
         "module/network" = {
           type = "internal/network";
           interface-type = "wired";
-          label-connected = "%{F#98bb6c}%ifname%%{F-} %local_ip%";
+          label-connected = "%{F${colors.brightGreen}}%ifname%%{F-} %local_ip%";
           label-disconnected = "disconnected";
-          label-disconnected-foreground = "#e82424";
-          label-connected-foreground = "#c8c093";
+          label-disconnected-foreground = colors.brightRed;
+          label-connected-foreground = colors.white;
         };
 
         "module/tray" = {
