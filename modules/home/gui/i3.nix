@@ -4,7 +4,7 @@
   ...
 }: let
   cfg = config.i3;
-  wallpaper = ../../../assets/background-image.png;
+  wallpaper = ../../../assets/background-image.jpg;
 in {
   options.i3.enable = lib.mkEnableOption "i3";
 

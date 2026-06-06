@@ -15,6 +15,7 @@
       direnv
       discord
       dbeaver-bin
+      mate.eom
       fastfetch
       fortune
       flameshot
