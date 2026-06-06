@@ -97,7 +97,7 @@ in {
         bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
         # Screenshot keys
-        bindsym --release Print exec --no-startup-id gnome-screenshot -ca
+        bindsym --release Print exec --no-startup-id flameshot gui
       '';
     };
 
@@ -109,6 +109,7 @@ in {
             {
               block = "sound";
               device_kind = "sink";
+              max_vol = 100;
             }
             {
               block = "time";
