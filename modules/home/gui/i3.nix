@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: let
   cfg = config.i3;
@@ -54,42 +53,14 @@ in {
           };
           background = "#1f1f28";
         };
-        bars = [
-          {
-            position = "top";
-            fonts = {
-              names = ["System Sans"];
-              size = 11.0;
-            };
-            statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
-            colors = {
-              background = "#1f1f28";
-              statusline = "#dcd7ba";
-              separator = "#54546d";
-              focusedWorkspace = {
-                border = "#98bb6c";
-                background = "#2a2a37";
-                text = "#dcd7ba";
-              };
-              inactiveWorkspace = {
-                border = "#54546d";
-                background = "#1f1f28";
-                text = "#54546d";
-              };
-              urgentWorkspace = {
-                border = "#e82424";
-                background = "#e82424";
-                text = "#dcd7ba";
-              };
-            };
-          }
-        ];
+        bars = [];
       };
       extraConfig = ''
         default_border pixel 3
 
         exec_always --no-startup-id thunar --daemon
         exec_always --no-startup-id bash -c "for id in \$(xinput list | grep pointer | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop \$id 'libinput Accel Profile Enabled' 0, 1; done"
+        exec_always --no-startup-id polybar main &
 
         # Volume keys (PipeWire)
         bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 5%+
@@ -99,45 +70,6 @@ in {
         # Screenshot keys
         bindsym --release Print exec --no-startup-id flameshot gui
       '';
-    };
-
-    programs.i3status-rust = {
-      enable = true;
-      bars = {
-        top = {
-          blocks = [
-            {
-              block = "sound";
-              device_kind = "sink";
-              max_vol = 100;
-            }
-            {
-              block = "time";
-              interval = 60;
-              format = "$timestamp.datetime(f:'%a %d/%m %k:%M %p')";
-            }
-          ];
-          settings = {
-            theme = {
-              theme = "plain";
-              overrides = {
-                idle_bg = "#1f1f28";
-                idle_fg = "#dcd7ba";
-                good_bg = "#1f1f28";
-                good_fg = "#98bb6c";
-                warning_bg = "#1f1f28";
-                warning_fg = "#ffa066";
-                critical_bg = "#1f1f28";
-                critical_fg = "#e82424";
-                info_bg = "#1f1f28";
-                info_fg = "#7e9cd8";
-                separator_bg = "#1f1f28";
-                separator_fg = "#54546d";
-              };
-            };
-          };
-        };
-      };
     };
 
     home.file.".background-image".source = wallpaper;

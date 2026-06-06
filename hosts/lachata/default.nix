@@ -23,5 +23,6 @@
     i3.enable = true;
     redshift.enable = true;
     obs-studio.enable = true;
+    polybar.enable = true;
   };
 }

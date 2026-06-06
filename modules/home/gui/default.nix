@@ -6,5 +6,6 @@
     ./redshift.nix
     ./i3.nix
     ./obs-studio.nix
+    ./polybar.nix
   ];
 }

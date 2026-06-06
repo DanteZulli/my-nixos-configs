@@ -41,6 +41,7 @@ modules/home/                             # user-level Home Manager modules
 
 - **ALWAYS** prefer home-manager (`./modules/home/`) over ad-hoc config when adding user-level settings.
 - **NEVER** use `nix-env` (imperative, not reproducible). Use `home.packages` instead.
+- **Enable what you import**: Every new feature-gated home-manager module MUST also have its `enable = true;` added to `hosts/lachata/default.nix`. Importing alone does NOT activate the module.
 
 ## Notable Patterns
 
