@@ -41,7 +41,7 @@ in {
     services.polybar = {
       enable = true;
       package = pkgs.polybarFull;
-      script = "polybar main &";
+      script = ""; # startup command is in i3.nix
       settings = {
         "bar/main" = {
           width = "100%";
