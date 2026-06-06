@@ -58,8 +58,6 @@ in {
       extraConfig = ''
         default_border pixel 3
         for_window [all] border pixel 3
-
-        exec_always --no-startup-id thunar --daemon
         exec_always --no-startup-id bash -c "for id in \$(xinput list | grep pointer | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop \$id 'libinput Accel Profile Enabled' 0, 1; done"
         exec_always --no-startup-id polybar main &
 

@@ -32,7 +32,6 @@
       simplescreenrecorder
       yt-dlp
       blanket
-      file-roller
       libreoffice
       kdePackages.kdenlive
       nicotine-plus
@@ -42,8 +41,6 @@
       eclipses.eclipse-jee
       dmenu
       i3status
-      xfce.thunar
-      xfce.thunar-volman
       vlc
       lxappearance
       kanagawa-gtk-theme
