@@ -22,5 +22,6 @@
     alacritty.enable = true;
     i3.enable = true;
     redshift.enable = true;
+    obs-studio.enable = true;
   };
 }

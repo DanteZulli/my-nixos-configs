@@ -33,6 +33,7 @@
       blanket
       file-roller
       libreoffice
+      kdePackages.kdenlive
       nicotine-plus
       skyscraper
       sqlite
@@ -42,6 +43,7 @@
       i3status
       xfce.thunar
       xfce.thunar-volman
+      vlc
       lxappearance
       kanagawa-gtk-theme
       kanagawa-icon-theme

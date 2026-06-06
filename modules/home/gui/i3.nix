@@ -92,7 +92,7 @@ in {
         exec_always --no-startup-id bash -c "for id in \$(xinput list | grep pointer | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop \$id 'libinput Accel Profile Enabled' 0, 1; done"
 
         # Volume keys (PipeWire)
-        bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+        bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume --limit 1.0 @DEFAULT_AUDIO_SINK@ 5%+
         bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
         bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
