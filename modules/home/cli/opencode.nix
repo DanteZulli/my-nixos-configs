@@ -36,7 +36,7 @@ in {
         };
       };
 
-      rules = ''
+      context = ''
         # OpenCode — Global Rules
 
         ## Conventional Commits

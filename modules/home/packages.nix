@@ -15,7 +15,7 @@
       direnv
       discord
       dbeaver-bin
-      mate.eom
+      eom
       fastfetch
       fortune
       flameshot
@@ -40,7 +40,7 @@
       temurin-bin
       eclipses.eclipse-jee
       dmenu
-      mate.engrampa
+      engrampa
       unzip
       p7zip
       i3status

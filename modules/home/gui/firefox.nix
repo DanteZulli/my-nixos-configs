@@ -9,5 +9,6 @@ in {
 
   config = lib.mkIf cfg.enable {
     programs.firefox.enable = true;
+    programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
 }
