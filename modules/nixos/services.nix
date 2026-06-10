@@ -10,5 +10,7 @@
 
   virtualisation.docker.enable = true;
 
+  security.polkit.enable = true;
+
   zramSwap.enable = true;
 }

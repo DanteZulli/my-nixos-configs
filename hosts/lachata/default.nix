@@ -20,9 +20,10 @@
     zsh.enable = true;
     starship.enable = true;
     alacritty.enable = true;
-    i3.enable = true;
-    redshift.enable = true;
+    sway.enable = true;
+    waybar.enable = true;
+    wlsunset.enable = true;
+    mako.enable = true;
     obs-studio.enable = true;
-    polybar.enable = true;
   };
 }

@@ -3,16 +3,15 @@
   lib,
   ...
 }: let
-  cfg = config.redshift;
+  cfg = config.wlsunset;
 in {
-  options.redshift.enable = lib.mkEnableOption "redshift";
+  options.wlsunset.enable = lib.mkEnableOption "wlsunset";
 
   config = lib.mkIf cfg.enable {
-    services.redshift = {
+    services.wlsunset = {
       enable = true;
       latitude = "-34.77";
       longitude = "-58.40";
-      provider = "manual";
       temperature = {
         day = 5500;
         night = 3700;

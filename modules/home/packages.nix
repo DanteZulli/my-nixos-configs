@@ -18,7 +18,13 @@
       eom
       fastfetch
       fortune
-      flameshot
+      grim
+      slurp
+      wl-clipboard
+      wofi
+      mako
+      pavucontrol
+      networkmanagerapplet
       fatsort
       ffmpeg
       heroic
@@ -39,11 +45,9 @@
       sqlite
       temurin-bin
       eclipses.eclipse-jee
-      dmenu
       engrampa
       unzip
       p7zip
-      i3status
       vlc
       lxappearance
       qogir-theme

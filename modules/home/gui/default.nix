@@ -3,9 +3,10 @@
     ./firefox.nix
     ./alacritty.nix
     ./mangohud.nix
-    ./redshift.nix
-    ./i3.nix
     ./obs-studio.nix
-    ./polybar.nix
+    ./sway.nix
+    ./waybar.nix
+    ./wlsunset.nix
+    ./mako.nix
   ];
 }
