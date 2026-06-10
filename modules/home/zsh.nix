@@ -16,7 +16,7 @@ in {
         fortune -n 100 -s
       '';
       shellAliases = {
-        j = "just --justfile ~/.config/nixos/justfile --working-directory ~/.config/nixos";
+        j = "just --justfile ~/.nixos/justfile --working-directory ~/.nixos";
       };
     };
   };
