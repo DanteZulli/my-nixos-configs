@@ -16,6 +16,7 @@ in {
         gcloud.disabled = true;
         line_break.disabled = true;
       };
+      presets = ["tokyo-night"];
     };
   };
 }
