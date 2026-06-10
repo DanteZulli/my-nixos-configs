@@ -4,7 +4,7 @@
   ...
 }: let
   cfg = config.sway;
-  wallpaper = ../../../assets/background-image.jpg;
+  wallpaper = ../../assets/background-image.jpg;
 in {
   options.sway.enable = lib.mkEnableOption "sway";
 

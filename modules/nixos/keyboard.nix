@@ -1,3 +1,0 @@
-{...}: {
-  console.keyMap = "us-acentos";
-}
