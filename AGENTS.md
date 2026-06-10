@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Single-host NixOS flake (`lachata`, user `dante`, x86_64-linux).
-System: `nixos-26.05`, home-manager: `release-26.05` (`system.stateVersion` = `"25.11"` — expected to lag).
+System: `nixos-26.05`, home-manager: `release-26.05` (`system.stateVersion` = `"25.11"`).
 
 ## Commands
 
@@ -30,7 +30,7 @@ j rebuild   # same as `just rebuild`
 ```
 flake.nix                                 # entry point — mkHost wires home-manager + pkgsUnstable
 hosts/lachata/                            # per-machine config
-  default.nix                             #   imports modules/configuration + modules/home, toggles home features
+  default.nix                             #   imports modules/configuration + modules/home, toggles features
   hardware-configuration.nix              #   auto-generated (nixos-generate-config), never edit
 modules/configuration/                    # system-level NixOS, feature-gated via modules.<name>.enable
   default.nix, boot, fonts, nix, timezone, networking, keyboard, ly,
@@ -43,8 +43,10 @@ modules/home/                             # user-level Home Manager, feature-gat
 ## Hard Rules
 
 - **ALWAYS** use home-manager (`modules/home/`) for user-level settings — never `nix-env` or ad-hoc system config.
-- **Enable what you import**: every feature-gated module needs `modules.<name>.enable = true;` (system) or `<name>.enable = true;` (home) in `hosts/lachata/default.nix`. Importing alone does nothing.
-- **Both config and home modules are feature-gated** via `lib.mkEnableOption`. Set to `true` in the host file to enable.
+- **Enable what you import**: importing a module is not enough — every feature-gated module needs `modules.<name>.enable = true` (system) or `<name>.enable = true` (home) in `hosts/lachata/default.nix`.
+- **System config modules** use `options.modules.<name>.enable = lib.mkEnableOption "..."` (defaults to `false`).
+- **Home modules** use `options.<name>.enable = lib.mkEnableOption "..."` (defaults to `false`).
+- **`core.nix`** and **`packages.nix`** are unconditional (no enable option) — always applied.
 
 ## Notable Patterns
 
@@ -59,7 +61,7 @@ modules/home/                             # user-level Home Manager, feature-gat
 - Indent: 2 spaces.
 - Functions: `{ config, lib, pkgs, ... }: { ... }` — destructure only what's used.
 - Feature-gated module pattern (home): `let cfg = config.<name>; in { options.<name>.enable = lib.mkEnableOption "..."; config = lib.mkIf cfg.enable { ... }; }`
-- Feature-gated module pattern (config): same but uses `config.modules.<name>` and `options.modules.<name>.enable` with `// {default = true;}`
+- Feature-gated module pattern (system): same but uses `config.modules.<name>` and `options.modules.<name>.enable`.
 - Multi-element lists: one per line. Single-element: inline.
 - Strings: double quotes normally, `''...''` for multi-line.
 - Naming: kebab-case files, camelCase attrs/vars, dot-separated NixOS options.

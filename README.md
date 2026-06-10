@@ -2,16 +2,15 @@
 
 Flake-based NixOS + Home Manager configuration for **x86_64-linux** machines.
 
-Currently manages a single host (`lachata`) with a Budgie desktop, gaming
-toolchain, and a fully declarative user environment.
+Currently manages a single host (`lachata`) with Sway, a gaming toolchain, and a fully declarative user environment.
 
 ## Layout
 
 | Path | What lives there |
 |------|------------------|
 | `hosts/<name>/` | Per-machine config: imports system modules + enables desired user features. Each host also has an auto-generated `hardware-configuration.nix`. |
-| `modules/nixos/` | **System-level** modules applied to every host: boot, desktop, gaming, GPU, networking, Nix daemon, services, timezone/locale, users. |
-| `modules/home/` | **User-level** modules (Home Manager) for `dante`: packages, CLI tools, GUI apps, and shell config. All are **feature-gated** — each has an `enable` option toggled per host. |
+| `modules/configuration/` | **System-level** NixOS modules: boot, fonts, nix, timezone, networking, keyboard, ly, hardware, services, gaming, shell, thunar, users. All feature-gated via `modules.<name>.enable`. |
+| `modules/home/` | **User-level** Home Manager modules for `dante`: packages, CLI tools, GUI apps, shell config. Mostly feature-gated via `<name>.enable` (except `core.nix` and `packages.nix`, which are unconditional). |
 
 ## Prerequisites
 
@@ -38,14 +37,15 @@ sudo nixos-generate-config --show-hardware-config > hosts/<new-hostname>/hardwar
 
 # 5. Rebuild
 sudo nixos-rebuild switch --flake .#<new-hostname>
-
 ```
 
 ## Day-to-day commands
 
 | Command | What it does |
 |---------|-------------|
-| `just rebuild` | Flake check → format (alejandra) → nixos-rebuild switch |
+| `just rebuild` | Format (alejandra) → nixos-rebuild switch (system + home) |
 | `just debug` | Same as rebuild with `--show-trace --verbose` |
 | `just update` | `nix flake update` (refresh all inputs to latest) |
-| `j <command>` | Zsh alias: runs `just` from the nixos dir regardless of cwd (available when shell module is enabled) |
+| `just clean` | Keep last 10 system + user generations, then nix-collect-garbage --delete-old |
+| `just list` | Show all available recipes |
+| `j <command>` | Zsh alias: runs `just` from the nixos dir regardless of cwd (available when `zsh.enable = true`) |
