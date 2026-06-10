@@ -6,33 +6,34 @@
 }: let
   cfg = config.polybar;
 
+  # Colors (Nord)
   colors = {
-    bg = "#1f1f28";
-    fg = "#dcd7ba";
+    bg = "#2E3440";
+    fg = "#D8DEE9";
 
-    black = "#090618";
-    red = "#c34043";
-    green = "#76946a";
-    yellow = "#c0a36e";
-    blue = "#7e9cd8";
-    magenta = "#957fb8";
-    cyan = "#6a9589";
-    white = "#c8c093";
+    black = "#3B4252";
+    red = "#BF616A";
+    green = "#A3BE8C";
+    yellow = "#EBCB8B";
+    blue = "#81A1C1";
+    magenta = "#B48EAD";
+    cyan = "#88C0D0";
+    white = "#E5E9F0";
 
-    brightBlack = "#727169";
-    brightRed = "#e82424";
-    brightGreen = "#98bb6c";
-    brightYellow = "#e6c384";
-    brightBlue = "#7fb4ca";
-    brightMagenta = "#938aa9";
-    brightCyan = "#7aa89f";
-    brightWhite = "#dcd7ba";
+    brightBlack = "#4C566A";
+    brightRed = "#BF616A";
+    brightGreen = "#A3BE8C";
+    brightYellow = "#EBCB8B";
+    brightBlue = "#81A1C1";
+    brightMagenta = "#B48EAD";
+    brightCyan = "#8FBCBB";
+    brightWhite = "#ECEFF4";
 
-    selectionBg = "#2d4f67";
-    selectionFg = "#c8c093";
+    selectionBg = "#434C5E";
+    selectionFg = "#D8DEE9";
 
-    orange = "#ffa066";
-    salmon = "#ff5d62";
+    orange = "#D08770";
+    salmon = "#BF616A";
   };
 in {
   options.polybar.enable = lib.mkEnableOption "polybar";
@@ -67,14 +68,14 @@ in {
           format = "<label-state> <label-mode>";
           label-focused = "%name%";
           label-focused-foreground = colors.fg;
-          label-focused-background = "#2a2a37";
+          label-focused-background = colors.bg;
           label-focused-underline = colors.brightGreen;
           label-focused-padding = 1;
           label-visible = "%name%";
           label-visible-foreground = colors.brightBlack;
           label-visible-padding = 1;
           label-unfocused = "%name%";
-          label-unfocused-foreground = "#54546d";
+          label-unfocused-foreground = colors.brightBlack;
           label-unfocused-padding = 1;
           label-urgent = "%name%";
           label-urgent-foreground = colors.brightRed;
@@ -83,7 +84,7 @@ in {
 
         "module/date" = {
           type = "internal/date";
-          interval = 60;
+          interval = 1;
           date = "%{F${colors.brightGreen}}%a%{F-} %d%{F${colors.brightMagenta}}/%{F-}%m %H%{F${colors.brightMagenta}}:%{F-}%M%{F${colors.brightMagenta}}:%{F-}%S";
           label = "%date%";
         };

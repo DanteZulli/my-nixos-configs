@@ -46,8 +46,8 @@
       i3status
       vlc
       lxappearance
-      kanagawa-gtk-theme
-      kanagawa-icon-theme
+      qogir-theme
+      arc-icon-theme
       psmisc
       source-code-pro
     ]

@@ -22,36 +22,37 @@ in {
           inner = 6;
           outer = 3;
         };
+        # Colors (Nord)
         colors = {
           focused = {
-            border = "#98bb6c";
-            background = "#1f1f28";
-            text = "#dcd7ba";
-            indicator = "#98bb6c";
-            childBorder = "#98bb6c";
+            border = "#A3BE8C";
+            background = "#2E3440";
+            text = "#D8DEE9";
+            indicator = "#A3BE8C";
+            childBorder = "#A3BE8C";
           };
           focusedInactive = {
-            border = "#727169";
-            background = "#1f1f28";
-            text = "#727169";
-            indicator = "#727169";
-            childBorder = "#727169";
+            border = "#4C566A";
+            background = "#2E3440";
+            text = "#4C566A";
+            indicator = "#4C566A";
+            childBorder = "#4C566A";
           };
           unfocused = {
-            border = "#54546d";
-            background = "#1f1f28";
-            text = "#54546d";
-            indicator = "#54546d";
-            childBorder = "#54546d";
+            border = "#3B4252";
+            background = "#2E3440";
+            text = "#3B4252";
+            indicator = "#3B4252";
+            childBorder = "#3B4252";
           };
           urgent = {
-            border = "#e82424";
-            background = "#e82424";
-            text = "#dcd7ba";
-            indicator = "#e82424";
-            childBorder = "#e82424";
+            border = "#BF616A";
+            background = "#BF616A";
+            text = "#ECEFF4";
+            indicator = "#BF616A";
+            childBorder = "#BF616A";
           };
-          background = "#1f1f28";
+          background = "#2E3440";
         };
         bars = [];
       };
