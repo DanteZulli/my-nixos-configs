@@ -57,7 +57,7 @@ in {
       };
       style = ''
         * {
-          font-family: "Source Code Pro";
+          font-family: "SauceCodePro Nerd Font Mono";
           min-height: 0;
         }
 

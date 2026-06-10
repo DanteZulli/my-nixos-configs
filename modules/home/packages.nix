@@ -51,7 +51,6 @@
       qogir-theme
       arc-icon-theme
       psmisc
-      source-code-pro
     ]
     ++ [
       pkgsUnstable.vscode-fhs

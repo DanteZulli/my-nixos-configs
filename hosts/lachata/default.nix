@@ -33,11 +33,11 @@
     mangohud.enable = true;
     zsh.enable = true;
     starship.enable = true;
-    alacritty.enable = true;
     sway.enable = true;
     waybar.enable = true;
     wlsunset.enable = true;
     mako.enable = true;
     obs-studio.enable = true;
+    foot.enable = true;
   };
 }

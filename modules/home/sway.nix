@@ -16,7 +16,7 @@ in {
       checkConfig = false;
       config = {
         modifier = "Mod4";
-        terminal = "alacritty";
+        terminal = "foot";
         menu = "wofi --show drun";
         gaps = {
           inner = 6;
@@ -82,7 +82,7 @@ in {
           mod = "Mod4";
         in {
           # Launcher
-          "${mod}+Return" = "exec alacritty";
+          "${mod}+Return" = "exec foot";
           "${mod}+d" = "exec wofi --show drun";
           "${mod}+Shift+q" = "kill";
 

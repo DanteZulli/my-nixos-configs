@@ -7,7 +7,6 @@
     ./direnv.nix
     ./opencode.nix
     ./firefox.nix
-    ./alacritty.nix
     ./mangohud.nix
     ./obs-studio.nix
     ./sway.nix
@@ -16,5 +15,6 @@
     ./mako.nix
     ./zsh.nix
     ./starship.nix
+    ./foot.nix
   ];
 }
