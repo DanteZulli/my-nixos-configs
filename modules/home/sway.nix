@@ -4,6 +4,7 @@
   ...
 }: let
   cfg = config.sway;
+  colors = import ../../assets/colors.nix;
   wallpaper = ../../assets/background-image.jpg;
 in {
   options.sway.enable = lib.mkEnableOption "sway";
@@ -23,34 +24,34 @@ in {
         };
         colors = {
           focused = {
-            border = "#A3BE8C";
-            background = "#2E3440";
-            text = "#D8DEE9";
-            indicator = "#A3BE8C";
-            childBorder = "#A3BE8C";
+            border = colors.normal.green;
+            background = colors.primary.background;
+            text = colors.primary.foreground;
+            indicator = colors.normal.green;
+            childBorder = colors.normal.green;
           };
           focusedInactive = {
-            border = "#4C566A";
-            background = "#2E3440";
-            text = "#4C566A";
-            indicator = "#4C566A";
-            childBorder = "#4C566A";
+            border = colors.bright.black;
+            background = colors.primary.background;
+            text = colors.bright.black;
+            indicator = colors.bright.black;
+            childBorder = colors.bright.black;
           };
           unfocused = {
-            border = "#3B4252";
-            background = "#2E3440";
-            text = "#3B4252";
-            indicator = "#3B4252";
-            childBorder = "#3B4252";
+            border = colors.normal.black;
+            background = colors.primary.background;
+            text = colors.normal.black;
+            indicator = colors.normal.black;
+            childBorder = colors.normal.black;
           };
           urgent = {
-            border = "#BF616A";
-            background = "#BF616A";
-            text = "#ECEFF4";
-            indicator = "#BF616A";
-            childBorder = "#BF616A";
+            border = colors.normal.red;
+            background = colors.normal.red;
+            text = colors.bright.white;
+            indicator = colors.normal.red;
+            childBorder = colors.normal.red;
           };
-          background = "#2E3440";
+          background = colors.primary.background;
         };
         window = {
           border = 3;

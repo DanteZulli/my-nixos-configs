@@ -4,7 +4,7 @@
   ...
 }: let
   cfg = config.alacritty;
-  theme = ./alacritty/nord.toml;
+  colors = import ../../assets/colors.nix;
 in {
   options.alacritty.enable = lib.mkEnableOption "alacritty";
 
@@ -12,19 +12,32 @@ in {
     programs.alacritty = {
       enable = true;
       settings = {
-        general.import = ["~/.config/alacritty/nord.toml"];
-        window.opacity = 0.95;
-        window.dynamic_padding = true;
-        window.padding = {
-          x = 5;
-          y = 5;
+        window = {
+          opacity = 0.95;
+          dynamic_padding = true;
+          padding = {
+            x = 5;
+            y = 5;
+          };
         };
-        scrolling.history = 10000;
-        scrolling.multiplier = 5;
+        scrolling = {
+          history = 10000;
+          multiplier = 5;
+        };
         selection.save_to_clipboard = true;
+        colors = {
+          primary = {
+            background = colors.primary.background;
+            foreground = colors.primary.foreground;
+          };
+          normal = {
+            inherit (colors.normal) black red green yellow blue magenta cyan white;
+          };
+          bright = {
+            inherit (colors.bright) black red green yellow blue magenta cyan white;
+          };
+        };
       };
     };
-
-    home.file.".config/alacritty/nord.toml".source = theme;
   };
 }

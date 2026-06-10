@@ -4,6 +4,7 @@
   ...
 }: let
   cfg = config.waybar;
+  colors = import ../../assets/colors.nix;
 in {
   options.waybar.enable = lib.mkEnableOption "waybar";
 
@@ -61,30 +62,30 @@ in {
         }
 
         window#waybar {
-          background: #2E3440;
-          color: #D8DEE9;
+          background: ${colors.primary.background};
+          color: ${colors.primary.foreground};
           border-bottom: 0px;
         }
 
         #workspaces button {
-          background: #2E3440;
-          color: #3B4252;
+          background: ${colors.primary.background};
+          color: ${colors.normal.black};
           padding: 0 4px;
         }
 
         #workspaces button.focused {
-          background: #2E3440;
-          color: #D8DEE9;
-          border-bottom: 2px solid #A3BE8C;
+          background: ${colors.primary.background};
+          color: ${colors.primary.foreground};
+          border-bottom: 2px solid ${colors.normal.green};
         }
 
         #workspaces button.urgent {
-          color: #BF616A;
+          color: ${colors.normal.red};
         }
 
         #clock, #pulseaudio, #memory, #cpu, #network, #tray {
           padding: 0 6px;
-          color: #D8DEE9;
+          color: ${colors.primary.foreground};
         }
       '';
     };
