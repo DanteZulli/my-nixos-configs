@@ -12,7 +12,9 @@ in {
 
     services.displayManager.ly = {
       enable = true;
-      defaultSession = "sway";
+      settings = {
+        default_session = "sway";
+      };
     };
   };
 }
