@@ -17,5 +17,9 @@ in {
         night = 3700;
       };
     };
+
+    systemd.user.sessionVariables = {
+      WAYLAND_DISPLAY = "wayland-1";
+    };
   };
 }
