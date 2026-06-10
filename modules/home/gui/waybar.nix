@@ -27,6 +27,7 @@ in {
           "clock" = {
             interval = 1;
             format = "{:%a %d/%m %H:%M:%S}";
+            timezone = "America/Argentina/Buenos_Aires";
           };
 
           "pulseaudio" = {
