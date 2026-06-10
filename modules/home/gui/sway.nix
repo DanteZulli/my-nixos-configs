@@ -17,10 +17,6 @@ in {
         modifier = "Mod4";
         terminal = "alacritty";
         menu = "wofi --show drun";
-        fonts = {
-          names = ["System Sans"];
-          size = 11.0;
-        };
         gaps = {
           inner = 6;
           outer = 3;
@@ -59,27 +55,10 @@ in {
         window = {
           border = 3;
           titlebar = false;
-          hideEdgeBorders = "smart";
-          commands = [
-            {
-              criteria = {all = true;};
-              command = "border pixel 3";
-            }
-          ];
-        };
-        floating = {
-          criteria = [
-            {app_id = "pavucontrol";}
-            {app_id = "blueman-manager";}
-            {window_role = "pop-up";}
-            {window_role = "task_dialog";}
-          ];
-          modifier = "Mod4";
         };
         focus = {
           followMouse = "yes";
           wrapping = "no";
-          newWindow = "smart";
         };
         output = {
           "*" = {
@@ -88,6 +67,7 @@ in {
         };
         input = {
           "*" = {
+            accel_profile = "flat";
             xkb_layout = "us";
             xkb_variant = "intl";
           };
@@ -96,7 +76,6 @@ in {
         startup = [
           {command = "waybar";}
           {command = "mako";}
-          {command = "nm-applet --indicator";}
         ];
         keybindings = let
           mod = "Mod4";
@@ -152,10 +131,6 @@ in {
           "${mod}+f" = "fullscreen toggle";
           "${mod}+Shift+space" = "floating toggle";
           "${mod}+space" = "focus mode_toggle";
-
-          # Scratchpad
-          "${mod}+Shift+minus" = "move scratchpad";
-          "${mod}+minus" = "scratchpad show";
 
           # Reload / exit
           "${mod}+Shift+c" = "reload";

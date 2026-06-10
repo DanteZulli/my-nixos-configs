@@ -23,8 +23,6 @@
       wl-clipboard
       wofi
       mako
-      pavucontrol
-      networkmanagerapplet
       fatsort
       ffmpeg
       heroic

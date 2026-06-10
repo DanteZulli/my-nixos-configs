@@ -30,11 +30,8 @@ in {
           };
 
           "pulseaudio" = {
-            format = "{icon} {volume}%";
+            format = "{volume}%";
             format-muted = "muted";
-            format-icons = {
-              default = [""];
-            };
           };
 
           "memory" = {
@@ -42,7 +39,7 @@ in {
           };
 
           "cpu" = {
-            format = "cpu {}%";
+            format = "cpu {usage}%";
           };
 
           "network" = {
@@ -58,8 +55,7 @@ in {
       };
       style = ''
         * {
-          font-family: "Source Code Pro", "System Sans";
-          font-size: 11px;
+          font-family: "Source Code Pro";
           min-height: 0;
         }
 
@@ -89,12 +85,6 @@ in {
           padding: 0 6px;
           color: #D8DEE9;
         }
-
-        #clock { color: #B48EAD; }
-        #pulseaudio { color: #A3BE8C; }
-        #memory { color: #EBCB8B; }
-        #cpu { color: #81A1C1; }
-        #network { color: #88C0D0; }
       '';
     };
   };
