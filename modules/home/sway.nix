@@ -133,6 +133,9 @@ in {
           "${mod}+Shift+space" = "floating toggle";
           "${mod}+space" = "focus mode_toggle";
 
+          # Resize mode
+          "${mod}+r" = "mode resize";
+
           # Reload / exit
           "${mod}+Shift+c" = "reload";
           "${mod}+Shift+e" = "exec swaynag -t warning -m 'Exit sway?' -b 'Exit' 'exec sway exit'";
@@ -144,6 +147,16 @@ in {
 
           # Screenshot
           "Print" = "exec grim -g \"$(slurp)\" - | wl-copy";
+        };
+        modes = {
+          resize = {
+            "Left" = "resize shrink width 10px";
+            "Down" = "resize grow height 10px";
+            "Up" = "resize shrink height 10px";
+            "Right" = "resize grow width 10px";
+            "Escape" = "mode default";
+            "Return" = "mode default";
+          };
         };
       };
     };
