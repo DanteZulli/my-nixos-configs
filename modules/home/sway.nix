@@ -83,7 +83,7 @@ in {
         in {
           # Launcher
           "${mod}+Return" = "exec foot";
-          "${mod}+d" = "exec wofi --show drun";
+          "${mod}+d" = "exec wofi";
           "${mod}+Shift+q" = "kill";
 
           # Focus

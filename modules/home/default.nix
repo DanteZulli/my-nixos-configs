@@ -16,5 +16,6 @@
     ./zsh.nix
     ./starship.nix
     ./foot.nix
+    ./wofi.nix
   ];
 }

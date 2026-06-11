@@ -39,5 +39,6 @@
     mako.enable = true;
     obs-studio.enable = true;
     foot.enable = true;
+    wofi.enable = true;
   };
 }

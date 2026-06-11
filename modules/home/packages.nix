@@ -21,7 +21,6 @@
       grim
       slurp
       wl-clipboard
-      wofi
       mako
       fatsort
       ffmpeg
