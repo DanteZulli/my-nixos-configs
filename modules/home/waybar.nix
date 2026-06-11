@@ -19,7 +19,7 @@ in {
           spacing = 4;
           modules-left = ["sway/workspaces"];
           modules-center = ["clock"];
-          modules-right = ["pulseaudio" "memory" "cpu" "network" "tray"];
+          modules-right = ["tray" "custom/separator" "pulseaudio" "custom/separator" "memory" "custom/separator" "cpu" "custom/separator" "network"];
 
           "sway/workspaces" = {
             all-outputs = true;
@@ -32,26 +32,32 @@ in {
           };
 
           "pulseaudio" = {
-            format = "{volume}%";
-            format-muted = "muted";
+            format = "<span color='${colors.normal.green}'>vol</span> {volume}%";
+            format-muted = "<span color='${colors.bright.black}'>muted</span>";
           };
 
           "memory" = {
-            format = "ram {}%";
+            format = "<span color='${colors.normal.green}'>ram</span> {}%";
           };
 
           "cpu" = {
-            format = "cpu {usage}%";
+            format = "<span color='${colors.normal.green}'>cpu</span> {usage}%";
           };
 
           "network" = {
             format-wifi = "{essid} {ipaddr}";
-            format-ethernet = "{ifname} {ipaddr}";
+            format-ethernet = "<span color='${colors.normal.green}'>{ifname}</span> {ipaddr}";
             format-disconnected = "disconnected";
           };
 
           "tray" = {
             spacing = 5;
+          };
+
+          "custom/separator" = {
+            format = "<span color='${colors.normal.magenta}'>/</span>";
+            interval = "once";
+            tooltip = false;
           };
         };
       };
@@ -69,7 +75,7 @@ in {
 
         #workspaces button {
           background: ${colors.primary.background};
-          color: ${colors.normal.black};
+          color: ${colors.bright.black};
           padding: 0 4px;
         }
 
