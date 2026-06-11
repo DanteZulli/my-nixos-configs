@@ -12,7 +12,7 @@ in {
       enable = true;
       settings = {
         show = "drun";
-        matching = "fuzzy";
+        matching = "multi-contains";
         no_actions = true;
         insensitive = true;
       };

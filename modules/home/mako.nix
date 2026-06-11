@@ -12,7 +12,6 @@ in {
     services.mako = {
       enable = true;
       settings = {
-        font = "SauceCodePro Nerd Font Mono 10";
         background-color = primary.background;
         text-color = primary.foreground;
         border-color = normal.blue;

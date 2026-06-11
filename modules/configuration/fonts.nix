@@ -11,14 +11,15 @@ in {
   config = lib.mkIf cfg.enable {
     fonts.enableDefaultPackages = true;
     fonts.packages = with pkgs; [
-      nerd-fonts.sauce-code-pro
+      nerd-fonts.caskaydia-mono
+      nerd-fonts.caskaydia-cove
     ];
 
     fonts.fontconfig = {
       defaultFonts = {
-        serif = ["SauceCodePro Nerd Font"];
-        sansSerif = ["SauceCodePro Nerd Font"];
-        monospace = ["SauceCodePro Nerd Font Mono"];
+        serif = ["CaskaydiaCove Nerd Font Light" "CaskaydiaMono Nerd Font Light"];
+        sansSerif = ["CaskaydiaCove Nerd Font Light" "CaskaydiaMono Nerd Font Light"];
+        monospace = ["CaskaydiaMono Nerd Font Mono Light"];
       };
     };
   };

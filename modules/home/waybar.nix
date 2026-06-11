@@ -63,7 +63,7 @@ in {
       };
       style = ''
         * {
-          font-family: "SauceCodePro Nerd Font Mono";
+          font-family: "CaskaydiaCove Nerd Font Light";
           min-height: 0;
         }
 

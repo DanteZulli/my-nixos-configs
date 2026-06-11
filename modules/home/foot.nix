@@ -14,7 +14,7 @@ in {
       enable = true;
       settings = {
         main = {
-          font = "SauceCodePro Nerd Font Mono:size=12";
+          font = "monospace:size=12"; # takes font from defaultFonts in fonts.nix
         };
         scrollback = {
           lines = 100000;
