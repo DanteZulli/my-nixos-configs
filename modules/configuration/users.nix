@@ -12,7 +12,7 @@ in {
     users.users.dante = {
       isNormalUser = true;
       description = "Dante Zulli";
-      shell = pkgs.zsh;
+      shell = pkgs.bash;
       extraGroups = [
         "networkmanager"
         "wheel"

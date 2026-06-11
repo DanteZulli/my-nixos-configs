@@ -12,8 +12,8 @@
     ./sway.nix
     ./waybar.nix
     ./wlsunset.nix
+    ./bash.nix
     ./mako.nix
-    ./zsh.nix
     ./starship.nix
     ./foot.nix
     ./wofi.nix

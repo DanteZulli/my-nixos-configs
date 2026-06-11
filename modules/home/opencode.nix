@@ -25,6 +25,8 @@ in {
             "git *" = "ask";
             "gh *" = "ask";
             "rm *" = "ask";
+            "sudo *" = "deny";
+            "nixos-rebuild *" = "deny";
           };
         };
 

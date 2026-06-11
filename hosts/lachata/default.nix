@@ -18,7 +18,6 @@
   modules.hardware.enable = true;
   modules.services.enable = true;
   modules.gaming.enable = true;
-  modules.shell.enable = true;
   modules.thunar.enable = true;
   modules.users.enable = true;
 
@@ -31,7 +30,6 @@
     direnv.enable = true;
     gh.enable = true;
     mangohud.enable = true;
-    zsh.enable = true;
     starship.enable = true;
     sway.enable = true;
     waybar.enable = true;
@@ -39,6 +37,7 @@
     mako.enable = true;
     obs-studio.enable = true;
     foot.enable = true;
+    bash.enable = true;
     wofi.enable = true;
   };
 }

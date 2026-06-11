@@ -20,9 +20,9 @@ Syntax check a single file:
 nix-instantiate --eval --strict <file>
 ```
 
-Zsh alias `j` runs `just` from the nixos dir regardless of cwd (when `zsh.enable = true`):
-```
-j rebuild   # same as `just rebuild`
+Bash alias `j` runs `just` from the nixos dir regardless of cwd:
+```bash
+alias j='just --justfile ~/.nixos/justfile --working-directory ~/.nixos'
 ```
 
 ## Structure
@@ -34,10 +34,10 @@ hosts/lachata/                            # per-machine config
   hardware-configuration.nix              #   auto-generated (nixos-generate-config), never edit
 modules/configuration/                    # system-level NixOS, feature-gated via modules.<name>.enable
   default.nix, boot, fonts, nix, timezone, networking, keyboard, ly,
-  hardware, services, gaming, shell, thunar, users
+  hardware, services, gaming, thunar, users
 modules/home/                             # user-level Home Manager, feature-gated (flat, no subdirs)
   core.nix, packages.nix, git, gh, direnv, opencode, firefox,
-  alacritty, mangohud, obs-studio, sway, waybar, wlsunset, mako, zsh, starship
+  mangohud, obs-studio, sway, waybar, wlsunset, mako, starship, foot, wofi
 ```
 
 ## Hard Rules
@@ -53,7 +53,7 @@ modules/home/                             # user-level Home Manager, feature-gat
 - **`mkHost` factory** in `flake.nix`: wires home-manager + `specialArgs` + `pkgsUnstable`. Adding a host: `nixosConfigurations.<name> = mkHost "<name>"`. Also sets `home-manager.useGlobalPkgs = true` and `home-manager.backupFileExtension = "bak"`.
 - **`pkgsUnstable`**: passed through `home-manager.extraSpecialArgs`. Use in `home.packages` via `++ [ pkgsUnstable.pkgname ]`. Imported with `config.allowUnfree = true`.
 - **`with pkgs;`** only inside `home.packages` lists. Everywhere else, spell full paths (`lib.lists.optionals`, not `with lib;`).
-- **`modules/configuration/shell.nix`** enables zsh system-wide (login shell). Per-user zsh config is in `modules/home/zsh.nix` (feature-gated).
+- **Bash** is the default login shell (configured in `modules/configuration/users.nix` via `pkgs.bash`).
 - **OpenCode MCP**: `modules/home/opencode.nix` configures a local MCP server for `mcp-nixos` — agents can query NixOS options + nixpkgs through it.
 
 ## Code Style

@@ -1,17 +1,18 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
-  cfg = config.zsh;
+  cfg = config.bash;
 in {
-  options.zsh.enable = lib.mkEnableOption "zsh";
+  options.bash.enable = lib.mkEnableOption "bash";
 
   config = lib.mkIf cfg.enable {
-    programs.zsh = {
+    programs.bash = {
       enable = true;
       enableCompletion = true;
-      initContent = ''
+      initExtra = ''
         krabby random 1 --no-variant
         fortune -n 100 -s
       '';

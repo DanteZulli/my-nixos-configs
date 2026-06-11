@@ -10,7 +10,6 @@
     ./hardware.nix
     ./services.nix
     ./gaming.nix
-    ./shell.nix
     ./thunar.nix
     ./users.nix
   ];
