@@ -12,6 +12,9 @@ in {
       "nix-command"
       "flakes"
     ];
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config = {
+      allowUnfree = true;
+      android_sdk.accept_license = true;
+    };
   };
 }
