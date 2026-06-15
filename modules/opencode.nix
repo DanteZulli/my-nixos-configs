@@ -1,6 +1,5 @@
-{ den, ... }:
-{
-  den.aspects.opencode.homeManager = { pkgs, ... }: {
+{den, ...}: {
+  den.aspects.opencode.homeManager = {pkgs, ...}: {
     programs.opencode = {
       enable = true;
       package = pkgs.opencode;
@@ -24,7 +23,7 @@
         mcp = {
           nixos = {
             type = "local";
-            command = [ "${pkgs.mcp-nixos}/bin/mcp-nixos" ];
+            command = ["${pkgs.mcp-nixos}/bin/mcp-nixos"];
           };
         };
       };

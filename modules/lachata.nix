@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.lachata = {
     includes = [
       den.batteries.hostname
@@ -16,6 +15,6 @@
       den.aspects.thunar
     ];
 
-    nixos.imports = [ ../hosts/lachata/hardware-configuration.nix ];
+    nixos.imports = [../hosts/lachata/hardware-configuration.nix];
   };
 }

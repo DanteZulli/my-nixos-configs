@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.wlsunset.homeManager = {
     services.wlsunset = {
       enable = true;

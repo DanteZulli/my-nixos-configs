@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.packages = {
     includes = [
       (den.batteries.unfree [
@@ -9,7 +8,7 @@
       ])
     ];
 
-    homeManager = { pkgs, ... }: {
+    homeManager = {pkgs, ...}: {
       home.packages = with pkgs; [
         alejandra
         android-tools

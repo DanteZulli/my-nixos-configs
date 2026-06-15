@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.dante = {
     includes = [
       den.batteries.define-user

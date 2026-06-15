@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.graphics.nixos = {
     hardware.graphics = {
       enable = true;

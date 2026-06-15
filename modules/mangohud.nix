@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.mangohud.homeManager = {
     home.file.".config/MangoHud/MangoHud.conf" = {
       text = ''

@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.starship.homeManager = {
     programs.starship = {
       enable = true;
@@ -9,7 +8,7 @@
         gcloud.disabled = true;
         line_break.disabled = true;
       };
-      presets = [ "tokyo-night" ];
+      presets = ["tokyo-night"];
     };
   };
 }

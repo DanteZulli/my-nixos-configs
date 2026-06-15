@@ -1,8 +1,9 @@
-{ den, lib, ... }:
 {
-  perSystem =
-    { pkgs, ... }:
-    {
-      packages = den.lib.nh.denPackages { fromFlake = true; } pkgs;
-    };
+  den,
+  lib,
+  ...
+}: {
+  perSystem = {pkgs, ...}: {
+    packages = den.lib.nh.denPackages {fromFlake = true;} pkgs;
+  };
 }

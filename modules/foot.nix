@@ -1,9 +1,11 @@
-{ den, lib, ... }:
-let
+{
+  den,
+  lib,
+  ...
+}: let
   inherit (import ../assets/colors.nix) primary normal bright;
   strip = s: lib.removePrefix "#" s;
-in
-{
+in {
   den.aspects.foot.homeManager = {
     programs.foot = {
       enable = true;

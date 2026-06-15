@@ -1,6 +1,5 @@
-{ den, ... }:
-{
-  den.aspects.thunar.nixos = { pkgs, ... }: {
+{den, ...}: {
+  den.aspects.thunar.nixos = {pkgs, ...}: {
     programs.thunar.enable = true;
     programs.xfconf.enable = true;
     programs.thunar.plugins = with pkgs; [

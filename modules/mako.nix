@@ -1,8 +1,6 @@
-{ den, ... }:
-let
+{den, ...}: let
   inherit (import ../assets/colors.nix) primary normal;
-in
-{
+in {
   den.aspects.mako.homeManager = {
     services.mako = {
       enable = true;

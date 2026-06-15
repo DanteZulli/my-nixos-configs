@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.gh.homeManager = {
     programs.gh = {
       enable = true;

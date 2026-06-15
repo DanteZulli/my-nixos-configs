@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.services.nixos = {
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;

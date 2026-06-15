@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.ly.nixos = {
     services.displayManager.ly = {
       enable = true;

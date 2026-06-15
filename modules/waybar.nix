@@ -1,8 +1,6 @@
-{ den, ... }:
-let
+{den, ...}: let
   colors = import ../assets/colors.nix;
-in
-{
+in {
   den.aspects.waybar.homeManager = {
     programs.waybar = {
       enable = true;
@@ -12,8 +10,8 @@ in
           position = "top";
           height = 24;
           spacing = 4;
-          modules-left = [ "sway/workspaces" ];
-          modules-center = [ "clock" ];
+          modules-left = ["sway/workspaces"];
+          modules-center = ["clock"];
           modules-right = [
             "tray"
             "custom/separator"
