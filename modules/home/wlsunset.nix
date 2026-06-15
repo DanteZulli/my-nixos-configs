@@ -10,6 +10,7 @@ in {
   config = lib.mkIf cfg.enable {
     services.wlsunset = {
       enable = true;
+      systemdTarget = "sway-session.target";
       latitude = "-34.77";
       longitude = "-58.40";
       temperature = {

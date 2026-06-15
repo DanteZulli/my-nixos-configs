@@ -50,6 +50,9 @@
       qogir-theme
       arc-icon-theme
       psmisc
+      prusa-slicer
+      android-studio-full
+      android-studio-tools
     ]
     ++ [
       pkgsUnstable.vscode-fhs

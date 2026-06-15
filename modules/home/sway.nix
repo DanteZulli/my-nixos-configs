@@ -14,6 +14,7 @@ in {
       enable = true;
       wrapperFeatures.gtk = true;
       checkConfig = false;
+      systemd.enable = true;
       config = {
         modifier = "Mod4";
         terminal = "foot";
