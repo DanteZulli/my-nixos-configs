@@ -8,7 +8,6 @@
         no_actions = true;
         insensitive = true;
       };
-      style = "";
     };
   };
 }
