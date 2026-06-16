@@ -7,13 +7,13 @@ list:
 [group('nix')]
 rebuild:
     alejandra --quiet .
-    sudo nixos-rebuild switch --flake .#lachata
+    nix run .#lachata -- switch
 
 # Same as rebuild with verbose debug output
 [group('nix')]
 debug:
     alejandra --quiet .
-    sudo nixos-rebuild switch --flake .#lachata --show-trace --verbose
+    nix run .#lachata -- switch --show-trace --verbose
 
 # Keep last 10 system + user generations and GC the store
 [group('nix')]
@@ -27,3 +27,7 @@ clean:
 update:
     nix flake update
 
+# Run a VM to test the config without rebooting
+[group('nix')]
+vm:
+    nix run .#vm
