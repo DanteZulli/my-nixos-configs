@@ -9,12 +9,6 @@ rebuild:
     alejandra --quiet .
     nix run .#lachata -- switch
 
-# Same as rebuild with verbose debug output
-[group('nix')]
-debug:
-    alejandra --quiet .
-    nix run .#lachata -- switch --show-trace --verbose
-
 # Keep last 10 system + user generations and GC the store
 [group('nix')]
 clean:
