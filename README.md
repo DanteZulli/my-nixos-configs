@@ -5,7 +5,7 @@ Personal NixOS + Home Manager flake for **x86_64-linux** machines, built with th
 ## Repository layout
 
 - `modules/`: Den framework modules (host, user, services, desktop, tooling, etc.)
-- `hosts/<machine>/`: per-host hardware config (auto-generated, do not edit) -> planning to migrate to [NixOS Facter](https://github.com/nix-community/nixos-facter)
+- `modules/hosts/<machine>/`: per-host config + [NixOS Facter](https://github.com/nix-community/nixos-facter) hardware report (`facter.json`)
 - `assets/`: shared assets
 
 ## Common commands

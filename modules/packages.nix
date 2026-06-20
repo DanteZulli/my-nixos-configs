@@ -57,6 +57,7 @@
         psmisc
         prusa-slicer
         vscode-fhs
+        maven
       ];
     };
   };
