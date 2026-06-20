@@ -21,7 +21,7 @@ clean:
 update:
     nix flake update
 
-# Run a VM to test the config without rebooting
+# Run a VM to test a host's config without rebooting (default: lachata)
 [group('nix')]
-vm:
-    nix run .#vm
+vm hostname="lachata":
+    nix run .#vm-{{hostname}}
