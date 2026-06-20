@@ -33,3 +33,32 @@ just vm
 ```shell
 nix-instantiate --eval --strict <file>
 ```
+
+## Adding a new host
+
+1. **On the target machine**, generate a hardware report:
+
+   ```shell
+   sudo nix run nixpkgs#nixos-facter -- -o facter.json
+   ```
+
+2. **In this repo**, create `modules/hosts/<hostname>/` with the `facter.json` and a
+   `<hostname>.nix` file declaring the host entity and its aspects (includes, filesystems,
+   etc.) — see `modules/hosts/lachata/lachata.nix` as a reference.
+
+   If the user is `dante`, it's already defined in `modules/users/dante.nix` and will be
+   enabled automatically via `den.batteries.host-aspects`.
+
+3. **Regenerate `flake.nix`**:
+
+   ```shell
+   nix run .#write-flake
+   ```
+
+4. Commit and push.
+
+5. **On the target machine**, clone the repo and switch to the new configuration:
+
+   ```shell
+   sudo nix run github:nix-community/nh -- .#<hostname> -- switch
+   ```
