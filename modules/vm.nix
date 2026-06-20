@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}: let
+{inputs, ...}: let
   hosts = builtins.attrNames inputs.self.nixosConfigurations;
   mkVm = hostname: let
     host = inputs.self.nixosConfigurations.${hostname};

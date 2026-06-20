@@ -1,6 +1,7 @@
 {den, ...}: {
   den.aspects.dante = {
     includes = [
+      den.batteries.host-aspects
       den.batteries.define-user
       den.batteries.primary-user
       (den.batteries.user-shell "bash")
@@ -12,9 +13,8 @@
       den.aspects.firefox
       den.aspects.mangohud
       den.aspects.obs-studio
-      den.aspects.sway
-      den.aspects.waybar
-      den.aspects.wlsunset
+      den.aspects.gaming
+      den.aspects.thunar
       den.aspects.bash
       den.aspects.mako
       den.aspects.starship
