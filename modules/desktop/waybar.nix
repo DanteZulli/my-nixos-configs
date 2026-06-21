@@ -1,7 +1,7 @@
 {den, ...}: let
-  colors = import ../assets/colors.nix;
+  colors = import ../../assets/colors.nix;
 in {
-  den.aspects.waybar.homeManager = {
+  den.aspects.desktop.waybar.homeManager = {
     programs.waybar = {
       enable = true;
       settings = {

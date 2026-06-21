@@ -11,15 +11,14 @@
       den.aspects.direnv
       den.aspects.opencode
       den.aspects.firefox
-      den.aspects.mangohud
       den.aspects.obs-studio
-      den.aspects.gaming
+      den.aspects.gaming.steam
+      den.aspects.gaming.gamemode
+      den.aspects.gaming.gamescope
+      den.aspects.gaming.mangohud
       den.aspects.thunar
       den.aspects.bash
-      den.aspects.mako
       den.aspects.starship
-      den.aspects.foot
-      den.aspects.wofi
     ];
 
     user = {

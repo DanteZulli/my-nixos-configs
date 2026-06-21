@@ -1,5 +1,5 @@
 {den, ...}: {
-  den.aspects.wofi.homeManager = {
+  den.aspects.desktop.wofi.homeManager = {
     programs.wofi = {
       enable = true;
       settings = {

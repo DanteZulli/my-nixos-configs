@@ -1,8 +1,8 @@
 {den, ...}: let
-  colors = import ../assets/colors.nix;
-  wallpaper = ../assets/background-image.jpg;
+  colors = import ../../assets/colors.nix;
+  wallpaper = ../../assets/background-image.jpg;
 in {
-  den.aspects.sway = {
+  den.aspects.desktop.sway = {
     nixos.programs.sway.enable = true;
 
     homeManager = {

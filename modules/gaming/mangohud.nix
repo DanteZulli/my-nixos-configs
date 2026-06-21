@@ -1,5 +1,5 @@
 {den, ...}: {
-  den.aspects.mangohud.homeManager = {
+  den.aspects.gaming.mangohud.homeManager = {
     home.file.".config/MangoHud/MangoHud.conf" = {
       text = ''
         gpu_stats

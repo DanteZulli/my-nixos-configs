@@ -13,12 +13,12 @@
       den.aspects.ly
       den.aspects.graphics
       den.aspects.services
-      den.aspects.sway
-      den.aspects.waybar
-      den.aspects.foot
-      den.aspects.wofi
-      den.aspects.mako
-      den.aspects.wlsunset
+      den.aspects.desktop.sway
+      den.aspects.desktop.waybar
+      den.aspects.desktop.foot
+      den.aspects.desktop.wofi
+      den.aspects.desktop.mako
+      den.aspects.desktop.wlsunset
     ];
 
     nixos = {

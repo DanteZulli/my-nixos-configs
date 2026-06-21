@@ -1,5 +1,5 @@
 {den, ...}: {
-  den.aspects.wlsunset.homeManager = {
+  den.aspects.desktop.wlsunset.homeManager = {
     services.wlsunset = {
       enable = true;
       systemdTarget = "sway-session.target";
