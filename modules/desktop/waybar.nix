@@ -58,7 +58,7 @@ in {
           };
 
           "custom/separator" = {
-            format = "<span color='${colors.normal.magenta}'>/</span>";
+            format = "<span color='${colors.normal.magenta}'>|</span>";
             interval = "once";
             tooltip = false;
           };
