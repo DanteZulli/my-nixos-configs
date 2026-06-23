@@ -15,7 +15,7 @@ in {
         margin = 12;
         padding = 12;
         anchor = "top-right";
-        layer = "overlay";
+        layer = "top";
         max-visible = 5;
         progress-color = normal.green;
       };

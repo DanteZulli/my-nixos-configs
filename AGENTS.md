@@ -62,8 +62,12 @@ modules/               # import-tree auto-loads every .nix file (no manual impor
 
 | Pattern | Access |
 |---------|--------|
-| `just *`, `j *`, `sudo *`, `nixos-rebuild *` | **deny** |
-| `git *`, `gh *`, `rm *` | **ask** |
+| `just *`, `j *`, `sudo *` | **deny** |
+| `nix*` (nix, nix-env, nix-store, ...) | **ask** |
+| `nixos-rebuild *` | **deny** |
+| `gh *`, `rm *` | **ask** |
+| `git status*`, `git log*`, `git diff*`, `git show*`, `git remote*`, `git config*`, `git help*` | **allow** |
+| `git *` (otros) | **ask** |
 
 ## Conventions
 

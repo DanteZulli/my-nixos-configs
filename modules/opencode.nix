@@ -12,11 +12,19 @@
           bash = {
             "just *" = "deny";
             "j *" = "deny";
-            "git *" = "ask";
+            "sudo *" = "deny";
+            "nix*" = "ask";
+            "nixos-rebuild *" = "deny";
             "gh *" = "ask";
             "rm *" = "ask";
-            "sudo *" = "deny";
-            "nixos-rebuild *" = "deny";
+            "git *" = "ask";
+            "git status*" = "allow";
+            "git log*" = "allow";
+            "git diff*" = "allow";
+            "git show*" = "allow";
+            "git remote*" = "allow";
+            "git config*" = "allow";
+            "git help*" = "allow";
           };
         };
 
